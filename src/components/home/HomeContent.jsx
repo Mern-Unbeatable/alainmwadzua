@@ -5,6 +5,7 @@ import CustomQuoteSection from "./CustomQuoteSection";
 import WhyChooseSection from "./WhyChooseSection";
 import ServicesSection from "./ServicesSection";
 import ExpertTutorsSection from "./ExpertTutorsSection";
+import DisclaimerSection from "./DisclaimerSection";
 import HowItWorksSection from "./HowItWorksSection";
 
 const HomeContent = memo(() => {
@@ -17,6 +18,7 @@ const HomeContent = memo(() => {
       <OnlineHelpCtaSection />
       <ServicesSection />
       <ExpertTutorsSection />
+      <DisclaimerSection />
     </>
   );
 });
