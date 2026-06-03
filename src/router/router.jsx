@@ -12,6 +12,7 @@ const About = lazy(() => import('../pages/About'));
 const Contact = lazy(() => import('../pages/Contact'));
 const Services = lazy(() => import('../pages/Services'));
 const WhatWeOffer = lazy(() => import('../pages/WhatWeOffer'));
+const Subject = lazy(() => import('../pages/Subject'));
 
 const PageLoader = () => (
   <div className='flex items-center justify-center min-h-screen'>
@@ -46,7 +47,7 @@ const router = createBrowserRouter(
         <Route path={ROUTES.ABOUT} element={<About />} />
         <Route path={ROUTES.SERVICES} element={<Services />} />
         <Route path={ROUTES.WHAT_WE_OFFER} element={<WhatWeOffer />} />
-        <Route path={ROUTES.SUBJECTS} element={<Services />} />
+        <Route path={ROUTES.SUBJECTS} element={<Subject />} />
         <Route path={ROUTES.PRICING} element={<Services />} />
         <Route path={ROUTES.FAQ} element={<Contact />} />
         <Route path={ROUTES.BLOG} element={<About />} />
