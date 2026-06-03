@@ -16,7 +16,7 @@ const Navbar = memo(() => {
             to={ROUTES.HOME}
             className="inline-flex items-center gap-2.5 shrink-0"
           >
-            <span className="w-12 h-12 rounded-lg bg-orange-500 text-white flex items-center justify-center">
+            <span className="w-12 h-12 rounded-lg bg-primary text-white flex items-center justify-center">
               <GraduationCap size={28} />
             </span>
             <span className="text-black font-semibold text-lg md:text-xl tracking-tight">

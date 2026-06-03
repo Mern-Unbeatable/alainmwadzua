@@ -1,5 +1,5 @@
 export const APP_CONFIG = {
-  NAME: 'Gairewele',
+  NAME: 'Online Class Writers',
   VERSION: '1.0.0',
 };
 
@@ -24,7 +24,7 @@ export const API_CONFIG = {
 };
 
 export const SEO_CONFIG = {
-  DEFAULT_TITLE: 'Gairewele',
+  DEFAULT_TITLE: 'Online Class Writers',
   DEFAULT_DESCRIPTION: 'A professional React application',
   DEFAULT_KEYWORDS: ['react', 'webpack', 'tailwind'],
   SITE_URL: typeof window !== 'undefined' ? window.location.origin : '',

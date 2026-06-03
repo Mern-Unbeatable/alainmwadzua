@@ -1,6 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 @import 'tailwindcss';
 
+@theme {
+  --color-primary: #FF6600;
+}
+
 :root {
   --primary-text-color: #373737;
   --primary-text-heading-color: #0C0C0C;
