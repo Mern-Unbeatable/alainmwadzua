@@ -1,58 +1,47 @@
 import React, { memo, useState, useCallback } from 'react';
-import { NavLink, Link } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
-import { APP_CONFIG, ROUTES } from '../config';
-
-const NAV_LINKS = [
-  { to: ROUTES.HOME, label: 'Home', end: true },
-  { to: ROUTES.ABOUT, label: 'About' },
-  { to: ROUTES.SERVICES, label: 'Services' },
-  { to: ROUTES.CONTACT, label: 'Contact' },
-];
-
-const navLinkClass = ({ isActive }) =>
-  isActive
-    ? 'px-3 py-2 rounded font-semibold bg-white/20'
-    : 'px-3 py-2 rounded hover:bg-blue-700 transition-colors duration-150';
-
-const mobileNavLinkClass = ({ isActive }) =>
-  isActive
-    ? 'block px-4 py-2 rounded font-semibold bg-white/20'
-    : 'block px-4 py-2 rounded hover:bg-blue-700 transition-colors duration-150';
+import { Link } from 'react-router-dom';
+import { Menu, X, MessageCircle, ArrowRight } from 'lucide-react';
+import { ROUTES } from '../config';
+import NavbarMenu from './NavbarMenu';
 
 const Navbar = memo(() => {
   const [menuOpen, setMenuOpen] = useState(false);
   const closeMenu = useCallback(() => setMenuOpen(false), []);
 
   return (
-    <nav className='bg-blue-600 text-white shadow-lg'>
+    <nav className='bg-[#f2f2f2] border-b border-gray-200'>
       <div className='container mx-auto px-4'>
         <div className='flex items-center justify-between h-16'>
-          {/* Brand */}
-          <div className='flex items-center gap-8'>
-            <Link to={ROUTES.HOME} className='text-xl font-bold tracking-tight'>
-              {APP_CONFIG.NAME}
-            </Link>
+          <Link
+            to={ROUTES.HOME}
+            className='inline-flex items-center gap-2.5 shrink-0'
+          >
+            <span className='w-5 h-5 rounded-md bg-orange-500 text-white flex items-center justify-center'>
+              <MessageCircle size={12} />
+            </span>
+            <span className='text-black font-semibold text-sm sm:text-base tracking-tight'>
+              Online Class Writers
+            </span>
+          </Link>
 
-            {/* Desktop links */}
-            <div className='hidden md:flex gap-1'>
-              {NAV_LINKS.map(({ to, label, end }) => (
-                <NavLink key={to} to={to} end={end} className={navLinkClass}>
-                  {label}
-                </NavLink>
-              ))}
-            </div>
-          </div>
+          <NavbarMenu />
 
           <div className='flex items-center gap-2'>
-            {/* Mobile hamburger */}
+            <button
+              type='button'
+              className='hidden md:inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-400 text-white font-semibold text-sm px-5 py-2 rounded-md transition-colors'
+            >
+              Get Help
+              <ArrowRight size={14} />
+            </button>
+
             <button
               type='button'
               onClick={() => setMenuOpen((v) => !v)}
               aria-label={menuOpen ? 'Close menu' : 'Open menu'}
               aria-expanded={menuOpen}
               aria-controls='mobile-menu'
-              className='md:hidden p-2 rounded hover:bg-blue-700 transition-colors'
+              className='lg:hidden p-2 rounded text-gray-700 hover:bg-gray-200 transition-colors'
             >
               {menuOpen ? <X size={20} /> : <Menu size={20} />}
             </button>
@@ -60,23 +49,19 @@ const Navbar = memo(() => {
         </div>
       </div>
 
-      {/* Mobile menu */}
       {menuOpen && (
-        <div
-          id='mobile-menu'
-          className='md:hidden border-t border-blue-500 px-4 py-3 flex flex-col gap-1'
-        >
-          {NAV_LINKS.map(({ to, label, end }) => (
-            <NavLink
-              key={to}
-              to={to}
-              end={end}
-              onClick={closeMenu}
-              className={mobileNavLinkClass}
+        <div id='mobile-menu' className='lg:hidden border-t border-gray-200 bg-white'>
+          <div className='max-w-6xl mx-auto px-4 py-3'>
+            <NavbarMenu mobile onItemClick={closeMenu} />
+
+            <button
+              type='button'
+              className='mt-3 w-full inline-flex items-center justify-center gap-2 bg-orange-500 hover:bg-orange-400 text-white font-semibold text-sm px-5 py-2.5 rounded-md transition-colors'
             >
-              {label}
-            </NavLink>
-          ))}
+              Get Help
+              <ArrowRight size={14} />
+            </button>
+          </div>
         </div>
       )}
     </nav>
