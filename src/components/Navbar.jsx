@@ -23,9 +23,7 @@ const Navbar = memo(() => {
               Online Class Writers
             </span>
           </Link>
-
           <NavbarMenu />
-
           <div className="flex items-center gap-2">
             <button
               type="button"
@@ -34,7 +32,6 @@ const Navbar = memo(() => {
               Get Help
               <ArrowRight size={16} />
             </button>
-
             <button
               type="button"
               onClick={() => setMenuOpen((v) => !v)}
