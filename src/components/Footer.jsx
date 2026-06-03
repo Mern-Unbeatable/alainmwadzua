@@ -19,7 +19,7 @@ const RESOURCE_LINKS = [
 
 const Footer = memo(() => {
   return (
-    <footer className="bg-black text-white mt-10">
+    <footer className="bg-black text-white ">
       <div className="container mx-auto px-4 pt-10 pb-5">
         <div className="grid grid-cols-1 gap-y-10 sm:grid-cols-2 sm:gap-x-10 lg:grid-cols-3 xl:grid-cols-[1.35fr_0.8fr_1fr_0.95fr] xl:gap-x-14 items-start">
           <div className="max-w-sm">
