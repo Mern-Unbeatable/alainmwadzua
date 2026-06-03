@@ -16,6 +16,11 @@
 html,
 body {
   font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
+}
+
+#root {
+  overflow-x: hidden;
 }
 
 @keyframes nav-arrow {

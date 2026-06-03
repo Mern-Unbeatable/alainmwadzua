@@ -7,7 +7,7 @@ const Layout = memo(() => {
   return (
     <div className="">
       <Navbar />
-      <main>
+      <main className="pt-20">
         <Outlet />
       </main>
       <Footer />
