@@ -1,6 +1,6 @@
 import React, { memo, useState, useCallback } from 'react';
 import { Outlet, NavLink, Link } from 'react-router-dom';
-import { LogIn, Menu, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { APP_CONFIG, ROUTES } from '../config';
 
 const NAV_LINKS = [
@@ -49,14 +49,6 @@ const Layout = memo(() => {
             </div>
 
             <div className='flex items-center gap-2'>
-              <Link
-                to={ROUTES.LOGIN}
-                className='hidden md:flex items-center gap-2 bg-white text-blue-600 hover:bg-blue-50 px-4 py-2 rounded-lg font-semibold text-sm transition-colors duration-200 shadow-sm'
-              >
-                <LogIn size={16} aria-hidden='true' />
-                Login
-              </Link>
-
               {/* Mobile hamburger */}
               <button
                 type='button'
@@ -89,14 +81,6 @@ const Layout = memo(() => {
                 {label}
               </NavLink>
             ))}
-            <Link
-              to={ROUTES.LOGIN}
-              onClick={closeMenu}
-              className='mt-2 flex items-center gap-2 bg-white text-blue-600 hover:bg-blue-50 px-4 py-2 rounded-lg font-semibold text-sm transition-colors duration-200 self-start'
-            >
-              <LogIn size={16} aria-hidden='true' />
-              Login
-            </Link>
           </div>
         )}
       </nav>

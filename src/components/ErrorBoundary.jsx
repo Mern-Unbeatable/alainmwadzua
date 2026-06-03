@@ -1,11 +1,16 @@
 import React, { Component } from 'react';
 
+const isLocalDev =
+  typeof window !== 'undefined' &&
+  (window.location.hostname === 'localhost' ||
+    window.location.hostname === '127.0.0.1');
+
 /**
  * Report errors to an external monitoring service.
  * Swap the body of this function with your Sentry / Datadog / etc. SDK call.
  */
 function reportError(error, errorInfo) {
-  if (process.env.NODE_ENV !== 'production') {
+  if (isLocalDev) {
     console.error('[ErrorBoundary] Caught error:', error, errorInfo);
     return;
   }
@@ -62,7 +67,7 @@ class ErrorBoundary extends Component {
             <p className='text-gray-600 mb-2'>
               We apologize for the inconvenience.
             </p>
-            {process.env.NODE_ENV !== 'production' && this.state.error && (
+            {isLocalDev && this.state.error && (
               <pre className='text-left text-xs bg-gray-100 rounded p-3 mb-4 overflow-auto max-h-40 text-red-700'>
                 {this.state.error.message}
               </pre>

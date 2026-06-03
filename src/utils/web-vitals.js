@@ -2,6 +2,10 @@ import { onCLS, onFCP, onINP, onLCP, onTTFB } from 'web-vitals';
 import { API_CONFIG } from '../config';
 
 const vitalsUrl = API_CONFIG.VITALS_ENDPOINT;
+const isLocalDev =
+  typeof window !== 'undefined' &&
+  (window.location.hostname === 'localhost' ||
+    window.location.hostname === '127.0.0.1');
 
 const getConnectionSpeed = () => {
   if (typeof navigator !== 'undefined' && 'connection' in navigator) {
@@ -69,7 +73,7 @@ const logToConsole = (metric) => {
 const handleMetric = (metric) => {
   logToConsole(metric);
 
-  if (process.env.NODE_ENV === 'production') {
+  if (!isLocalDev && vitalsUrl) {
     sendToAnalytics(metric);
   }
 };

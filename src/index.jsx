@@ -8,6 +8,11 @@ import {
   checkPerformanceBudget,
 } from './utils/web-vitals';
 
+const isLocalDev =
+  typeof window !== 'undefined' &&
+  (window.location.hostname === 'localhost' ||
+    window.location.hostname === '127.0.0.1');
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
@@ -15,7 +20,7 @@ root.render(
   </React.StrictMode>,
 );
 
-if (process.env.NODE_ENV !== 'production') {
+if (isLocalDev) {
   reportWebVitals();
   detectLongTasks();
   checkPerformanceBudget();

@@ -1,34 +1,9 @@
 const path = require('path');
-const fs = require('fs');
-const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const dotenv = require('dotenv');
 
 module.exports = (env, argv) => {
   const isProd = argv.mode === 'production';
-
-  // Load .env.production or .env.development, fall back to .env
-  const envFile = isProd ? '.env.production' : '.env.development';
-  const envPath = path.resolve(__dirname, envFile);
-  const fallbackPath = path.resolve(__dirname, '.env');
-  const rawEnv = fs.existsSync(envPath)
-    ? dotenv.parse(fs.readFileSync(envPath))
-    : fs.existsSync(fallbackPath)
-      ? dotenv.parse(fs.readFileSync(fallbackPath))
-      : {};
-
-  // Replace the entire process.env object so the browser never sees a bare
-  // `process` reference (which is Node-only and undefined in browsers).
-  // Individual process.env.KEY accesses resolve against this object at build
-  // time; unknown keys return undefined and fall through to the || defaults.
-  const envKeys = {
-    'process.env': JSON.stringify({
-      NODE_ENV: argv.mode || 'development',
-      ...rawEnv,
-    }),
-  };
-
-  const devPort = parseInt(rawEnv.REACT_APP_DEV_PORT || '5173', 10);
+  const devPort = 5173;
 
   return {
     entry: './src/index.jsx',
@@ -66,7 +41,6 @@ module.exports = (env, argv) => {
       extensions: ['.js', '.jsx'],
     },
     plugins: [
-      new webpack.DefinePlugin(envKeys),
       new HtmlWebpackPlugin({
         template: './public/index.html',
         filename: 'index.html',
@@ -95,13 +69,6 @@ module.exports = (env, argv) => {
             chunks: 'all',
             priority: 20,
           },
-          // Redux + RTK in their own chunk
-          redux: {
-            test: /[\\/]node_modules[\\/](@reduxjs|react-redux)[\\/]/,
-            name: 'vendor-redux',
-            chunks: 'all',
-            priority: 10,
-          },
           // Everything else from node_modules
           vendors: {
             test: /[\\/]node_modules[\\/]/,
@@ -126,7 +93,7 @@ module.exports = (env, argv) => {
       // Proxy /api/* → backend so browser never sees a CORS error in dev
       proxy: {
         '/api': {
-          target: rawEnv.REACT_APP_API_BASE_URL || 'http://localhost:8000',
+          target: 'http://localhost:8000',
           changeOrigin: true,
           secure: false,
         },
