@@ -1,0 +1,25 @@
+@import 'tailwindcss';
+
+:root {
+  --primary-text-color: #373737;
+  --primary-text-heading-color: #0C0C0C;
+  --secondary-text-color: #FFFFFF;
+  --ternary-text-color: #525252;
+  --button-bg: #2B6A0A;
+}
+
+@keyframes nav-arrow {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(4px);
+  }
+}
+
+@layer utility {
+  .animate-nav-arrow {
+    animation: nav-arrow 1.2s ease-in-out infinite;
+  }
+}
