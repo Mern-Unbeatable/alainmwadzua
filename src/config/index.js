@@ -7,6 +7,11 @@ export const ROUTES = {
   HOME: '/',
   ABOUT: '/about',
   SERVICES: '/services',
+  WHAT_WE_OFFER: '/What-We-Offe',
+  SUBJECTS: '/subjects',
+  PRICING: '/pricing',
+  FAQ: '/faq',
+  BLOG: '/blog',
   CONTACT: '/contact',
 };
 

@@ -1,6 +1,6 @@
 import React, { memo, useState, useCallback } from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, X, MessageCircle, ArrowRight } from 'lucide-react';
+import { Menu, X, MessageCircle, ArrowRight, GraduationCap } from 'lucide-react';
 import { ROUTES } from '../config';
 import NavbarMenu from './NavbarMenu';
 
@@ -17,9 +17,9 @@ const Navbar = memo(() => {
             className='inline-flex items-center gap-2.5 shrink-0'
           >
             <span className='w-5 h-5 rounded-md bg-orange-500 text-white flex items-center justify-center'>
-              <MessageCircle size={12} />
+              <GraduationCap size={12} />
             </span>
-            <span className='text-black font-semibold text-sm sm:text-base tracking-tight'>
+            <span className='text-black font-semibold text-lg tracking-tight'>
               Online Class Writers
             </span>
           </Link>

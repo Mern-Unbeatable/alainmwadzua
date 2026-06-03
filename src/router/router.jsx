@@ -44,6 +44,11 @@ const router = createBrowserRouter(
         <Route path={ROUTES.HOME} element={<Home />} />
         <Route path={ROUTES.ABOUT} element={<About />} />
         <Route path={ROUTES.SERVICES} element={<Services />} />
+        <Route path={ROUTES.WHAT_WE_OFFER} element={<Services />} />
+        <Route path={ROUTES.SUBJECTS} element={<Services />} />
+        <Route path={ROUTES.PRICING} element={<Services />} />
+        <Route path={ROUTES.FAQ} element={<Contact />} />
+        <Route path={ROUTES.BLOG} element={<About />} />
         <Route path={ROUTES.CONTACT} element={<Contact />} />
       </Route>
 

@@ -3,39 +3,14 @@ import { Link, useLocation } from 'react-router-dom';
 import { ROUTES } from '../config';
 
 const MENU_ITEMS = [
-  { label: 'Home', to: ROUTES.HOME, path: ROUTES.HOME, exact: true },
-  {
-    label: 'What We Offer',
-    to: ROUTES.SERVICES,
-    path: ROUTES.SERVICES,
-    exact: true,
-  },
-  {
-    label: 'Subjects',
-    to: `${ROUTES.SERVICES}#subjects`,
-    path: ROUTES.SERVICES,
-    hash: '#subjects',
-  },
-  {
-    label: 'Pricing',
-    to: `${ROUTES.SERVICES}#pricing`,
-    path: ROUTES.SERVICES,
-    hash: '#pricing',
-  },
-  {
-    label: 'FAQ',
-    to: `${ROUTES.CONTACT}#faq`,
-    path: ROUTES.CONTACT,
-    hash: '#faq',
-  },
-  { label: 'Contact', to: ROUTES.CONTACT, path: ROUTES.CONTACT, exact: true },
-  {
-    label: 'Blog',
-    to: `${ROUTES.ABOUT}#blog`,
-    path: ROUTES.ABOUT,
-    hash: '#blog',
-  },
-  { label: 'About', to: ROUTES.ABOUT, path: ROUTES.ABOUT, exact: true },
+  { label: 'Home', to: ROUTES.HOME, path: ROUTES.HOME },
+  { label: 'What We Offer', to: ROUTES.WHAT_WE_OFFER, path: ROUTES.WHAT_WE_OFFER },
+  { label: 'Subjects', to: ROUTES.SUBJECTS, path: ROUTES.SUBJECTS },
+  { label: 'Pricing', to: ROUTES.PRICING, path: ROUTES.PRICING },
+  { label: 'FAQ', to: ROUTES.FAQ, path: ROUTES.FAQ },
+  { label: 'Contact', to: ROUTES.CONTACT, path: ROUTES.CONTACT },
+  { label: 'Blog', to: ROUTES.BLOG, path: ROUTES.BLOG },
+  { label: 'About', to: ROUTES.ABOUT, path: ROUTES.ABOUT },
 ];
 
 const desktopLinkClass = (isActive) =>
@@ -51,17 +26,7 @@ const mobileLinkClass = (isActive) =>
 const NavbarMenu = memo(({ mobile = false, onItemClick }) => {
   const location = useLocation();
 
-  const isItemActive = (item) => {
-    if (item.hash) {
-      return location.pathname === item.path && location.hash === item.hash;
-    }
-
-    if (item.exact) {
-      return location.pathname === item.path && !location.hash;
-    }
-
-    return location.pathname.startsWith(item.path);
-  };
+  const isItemActive = (item) => location.pathname === item.path;
 
   if (mobile) {
     return (
