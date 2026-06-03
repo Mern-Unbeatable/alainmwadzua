@@ -30,8 +30,8 @@ const STEPS = [
 
 const HowItWorksSection = memo(() => {
   return (
-    <section className="mt-8 sm:mt-10 ">
-      <div className="relative overflow-hidden rounded-2xl border border-slate-100 bg-white px-5 py-7 shadow-[0_10px_30px_rgba(15,23,42,0.06)] sm:px-8 sm:py-10">
+    <section className="py-14 sm:py-16 lg:py-20 bg-white">
+      <div className="container mx-auto px-4">
         <div className="pointer-events-none absolute inset-0 " />
 
         <div className="relative z-10 text-center">
