@@ -1,275 +1,238 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { 
-  CheckCircle2, 
-  Clock, 
-  ShieldCheck, 
-  UserCheck, 
-  Lock, 
-  Globe, 
-  Zap, 
-  GraduationCap, 
+  ArrowRight, 
   FileText, 
-  Sliders, 
-  CreditCard 
+  Monitor, 
+  Award, 
+  Zap,
+  Calculator, 
+  BookOpen, 
+  Activity, 
+  Cpu, 
+  Scale, 
+  Globe, 
+  LineChart, 
+  Layers, 
+  Sigma, 
+  FlaskConical, 
+  MessageSquare, 
+  ShieldAlert, 
+  BarChart3, 
+  HeartHandshake, 
+  Users, 
+  Compass, 
+  Atom, 
+  Network, 
+  Binary 
 } from 'lucide-react';
 
 const Subject = () => {
-  const [formData, setFormData] = useState({
-    helpType: 'Taking online class',
-    timeline: 'Today',
-    subject: '',
-    name: '',
-    email: '',
-    phone: '',
-    message: ''
-  });
 
-  const helpOptions = [
-    'Taking online class', 'Take my Proctored Exam', 'Research Paper', 
-    'Take my Online test', 'Academic Essay', 'Class Project', 'Other'
-  ];
-
-  const timelineOptions = [
-    'Today', '24 hours', '2-3 days', 'This Week', 'Flexible Academic'
-  ];
-
-  const trustPoints = [
-    { icon: <CreditCard className="w-4 h-4 text-blue-500" />, text: "Affordable Services" },
-    { icon: <UserCheck className="w-4 h-4 text-amber-500" />, text: "Experienced Professionals" },
-    { icon: <ShieldCheck className="w-4 h-4 text-slate-500" />, text: "Guaranteed Original Content" },
-    { icon: <Clock className="w-4 h-4 text-purple-500" />, text: "Timely Submissions" },
-    { icon: <Zap className="w-4 h-4 text-green-500" />, text: "Transparent Processes" },
-    { icon: <GraduationCap className="w-4 h-4 text-emerald-500" />, text: "A or B Grade Guaranteed" },
-    { icon: <Lock className="w-4 h-4 text-blue-600" />, text: "100% Confidential" },
-    { icon: <Globe className="w-4 h-4 text-orange-500" />, text: "US Based Academic Experts" },
-    { icon: <Zap className="w-4 h-4 text-cyan-500" />, text: "Fast 30-Min Response" },
-  ];
-
-  const featureCards = [
-    {
-      icon: <Clock className="w-5 h-5 text-indigo-600" />,
-      title: "Simplicity & Availability",
-      desc: "Need help with an online class? We make the process simple. Our support team is available 7 days a week to review your class details and provide a customized quote based on your specific needs."
-    },
-    {
-      icon: <Sliders className="w-5 h-5 text-indigo-600" />,
-      title: "Detailed Customization",
-      desc: "Send us your syllabus, assignment details, or course requirements, and we'll get back to you quickly with pricing and options. If you've already completed part of the class, let us know so we can factor that into the cost."
-    },
+  // Highlights / Features underneath intro
+  const highlights = [
     {
       icon: <FileText className="w-5 h-5 text-indigo-600" />,
-      title: "Flexible Payments",
-      desc: "Our rates are flexible and negotiable, and we also offer convenient payment plans to fit your budget. Share as much information as possible for the fastest response, and include your email for a quick response from our team."
+      title: "Exams, Essays & Papers",
+      desc: "Precision-crafted papers and exam strategies for top marks.",
+      bg: "bg-white border border-slate-100 shadow-xs",
+      textColor: "text-slate-900",
+      descColor: "text-slate-500"
+    },
+    {
+      icon: <Monitor className="w-5 h-5 text-white" />,
+      title: "Entire Online Classes",
+      desc: "We handle everything from Week 1 to the final grade.",
+      bg: "bg-orange-600 text-white shadow-lg shadow-orange-600/10",
+      textColor: "text-white",
+      descColor: "text-orange-100"
+    },
+    {
+      icon: <Award className="w-5 h-5 text-amber-600" />,
+      title: "Top Grades – A or B",
+      desc: "Guaranteed performance or your money back. 100% success.",
+      bg: "bg-amber-50/70 border border-amber-100",
+      textColor: "text-slate-900",
+      descColor: "text-slate-500"
+    },
+    {
+      icon: <Zap className="w-5 h-5 text-cyan-600" />,
+      title: "Fast Delivery",
+      desc: "Last-minute assignments? We deliver high-quality work fast.",
+      bg: "bg-white border border-slate-100 shadow-xs",
+      textColor: "text-slate-900",
+      descColor: "text-slate-500"
     }
   ];
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log('Submitted Data:', formData);
-  };
+  // 29 Subjects Grid Data mapped from image_e85efb.png
+  const subjects = [
+    { name: "Accounting", icon: <BarChart3 className="w-4 h-4 text-slate-700" /> },
+    { name: "Theology", icon: <BookOpen className="w-4 h-4 text-slate-700" /> },
+    { name: "Algebra", icon: <Calculator className="w-4 h-4 text-slate-700" /> },
+    { name: "Biology", icon: <Activity className="w-4 h-4 text-slate-700" /> },
+    { name: "Business Law", icon: <Scale className="w-4 h-4 text-slate-700" /> },
+    { name: "Calculus", icon: <Sigma className="w-4 h-4 text-slate-700" /> },
+    { name: "Chemistry", icon: <FlaskConical className="w-4 h-4 text-slate-700" /> },
+    { name: "Nursing", icon: <HeartHandshake className="w-4 h-4 text-slate-700" /> },
+    { name: "Communication", icon: <MessageSquare className="w-4 h-4 text-slate-700" /> },
+    { name: "Criminal Justice", icon: <ShieldAlert className="w-4 h-4 text-slate-700" /> },
+    { name: "Economics", icon: <LineChart className="w-4 h-4 text-slate-700" /> },
+    { name: "Engineering", icon: <Cpu className="w-4 h-4 text-slate-700" /> },
+    { name: "English", icon: <BookOpen className="w-4 h-4 text-slate-700" /> },
+    { name: "Finance", icon: <BarChart3 className="w-4 h-4 text-slate-700" /> },
+    { name: "Geometry", icon: <Layers className="w-4 h-4 text-slate-700" /> },
+    { name: "History", icon: <Compass className="w-4 h-4 text-slate-700" /> },
+    { name: "IT", icon: <Binary className="w-4 h-4 text-slate-700" /> },
+    { name: "Marketing", icon: <LineChart className="w-4 h-4 text-slate-700" /> },
+    { name: "Management", icon: <Users className="w-4 h-4 text-slate-700" /> },
+    { name: "Operations Management", icon: <Network className="w-4 h-4 text-slate-700" /> },
+    { name: "Philosophy", icon: <Compass className="w-4 h-4 text-slate-700" /> },
+    { name: "Physics", icon: <Atom className="w-4 h-4 text-slate-700" /> },
+    { name: "Political Science", icon: <Globe className="w-4 h-4 text-slate-700" /> },
+    { name: "Science", icon: <FlaskConical className="w-4 h-4 text-slate-700" /> },
+    { name: "Sociology", icon: <Users className="w-4 h-4 text-slate-700" /> },
+    { name: "Statistics", icon: <BarChart3 className="w-4 h-4 text-slate-700" /> },
+    { name: "Trigonometry", icon: <Sigma className="w-4 h-4 text-slate-700" /> },
+    { name: "Strategic Management", icon: <Layers className="w-4 h-4 text-slate-700" /> },
+    { name: "Others", icon: <BookOpen className="w-4 h-4 text-slate-700" /> }
+  ];
 
   return (
-    <div className="w-full bg-slate-50 font-sans text-slate-800">
-      
-      {/* 1. Header Section */}
-      <section className="text-center pt-16 pb-12 px-4 max-w-3xl mx-auto">
-        <h1 className="text-4xl font-extrabold text-slate-900 tracking-tight mb-4">
-          Get a Fast, Personalized Quote
-        </h1>
-        <p className="text-base text-slate-600 leading-relaxed">
-          Every assignment is unique. We provide custom pricing to ensure you get the best value for your specific academic needs.
-        </p>
-      </section>
+    <div className="w-full bg-white font-sans text-slate-800 antialiased">
 
-      {/* 2. Main content: Form & Trust Badges */}
-      <section className="max-w-6xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-3 gap-8 items-start pb-20">
-        
-        {/* Left Side: Form (Spans 2 columns on large screens) */}
-        <div className="lg:col-span-2 bg-white rounded-2xl shadow-xl shadow-slate-100 p-6 md:p-8 border border-slate-100">
-          <form onSubmit={handleSubmit} className="space-y-6">
+      {/* SECTION 1: HERO INTRO AREA */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-12">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          
+          {/* Left Text Column */}
+          <div className="lg:col-span-5 space-y-6">
+            <h1 className="text-4xl sm:text-5xl font-black text-slate-900 tracking-tight leading-none">
+              Expert Tutors <br />
+              Across <span className="text-orange-600">All Major <br />Disciplines</span>
+            </h1>
+            <p className="text-xs sm:text-sm text-slate-500 leading-relaxed max-w-md">
+              Whether you're struggling with advanced calculus, nursing prerequisites, or intensive research papers in history or management, our team of degree-holding specialists is prepared to step in. We will perfectly take your class and get you A+ grades!
+            </p>
             
-            {/* What do you need help with */}
-            <div>
-              <label className="block text-sm font-bold text-slate-900 mb-3">What do you need help with?</label>
-              <div className="flex flex-wrap gap-2">
-                {helpOptions.map((option) => (
-                  <button
-                    key={option}
-                    type="button"
-                    onClick={() => setFormData({ ...formData, helpType: option })}
-                    className={`px-4 py-2 text-xs font-medium rounded-full border transition-all duration-200 ${
-                      formData.helpType === option
-                        ? 'bg-orange-600 border-orange-600 text-white shadow-sm'
-                        : 'border-slate-200 text-slate-600 hover:border-slate-300 bg-white'
-                    }`}
-                  >
-                    {option}
-                  </button>
-                ))}
-              </div>
+            {/* Minimal Pill Badges from image */}
+            <div className="flex flex-wrap gap-2 pt-2">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-slate-50 border border-slate-100 rounded-full text-[10px] font-bold text-slate-600">
+                📝 Homework
+              </span>
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-slate-50 border border-slate-100 rounded-full text-[10px] font-bold text-slate-600">
+                💻 Midterms/Finals
+              </span>
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-slate-50 border border-slate-100 rounded-full text-[10px] font-bold text-slate-600">
+                📚 Discussion Posts
+              </span>
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-slate-50 border border-slate-100 rounded-full text-[10px] font-bold text-slate-600">
+                🚀 Full Semesters
+              </span>
             </div>
 
-            {/* How soon do you need help */}
-            <div>
-              <label className="block text-sm font-bold text-slate-900 mb-3">How soon do you need help?</label>
-              <div className="flex flex-wrap gap-2">
-                {timelineOptions.map((option) => (
-                  <button
-                    key={option}
-                    type="button"
-                    onClick={() => setFormData({ ...formData, timeline: option })}
-                    className={`px-4 py-2 text-xs font-medium rounded-full border transition-all duration-200 ${
-                      formData.timeline === option
-                        ? 'bg-orange-600 border-orange-600 text-white shadow-sm'
-                        : 'border-slate-200 text-slate-600 hover:border-slate-300 bg-white'
-                    }`}
-                  >
-                    {option}
-                  </button>
-                ))}
-              </div>
-            </div>
-
-            {/* Input fields */}
-            <div className="space-y-4">
-              <div>
-                <label className="block text-xs font-bold tracking-wide text-slate-700 uppercase mb-2">What subject or course is this for?</label>
-                <input
-                  type="text"
-                  placeholder="subject/course name/course code"
-                  className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500 transition-colors"
-                  value={formData.subject}
-                  onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                  required
-                />
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-xs font-bold tracking-wide text-slate-700 uppercase mb-2">Name</label>
-                  <input
-                    type="text"
-                    placeholder="your name"
-                    className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500 transition-colors"
-                    value={formData.name}
-                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    required
-                  />
-                </div>
-                <div>
-                  <label className="block text-xs font-bold tracking-wide text-slate-700 uppercase mb-2">Email Address</label>
-                  <input
-                    type="email"
-                    placeholder="your@email.com"
-                    className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500 transition-colors"
-                    value={formData.email}
-                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    required
-                  />
-                </div>
-              </div>
-
-              <div>
-                <label className="block text-xs font-bold tracking-wide text-slate-700 uppercase mb-2">Phone Number</label>
-                <input
-                  type="tel"
-                  placeholder="your phone number"
-                  className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500 transition-colors"
-                  value={formData.phone}
-                  onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                />
-              </div>
-
-              <div>
-                <label className="block text-xs font-bold tracking-wide text-slate-700 uppercase mb-2">Message</label>
-                <textarea
-                  rows="4"
-                  placeholder="Message/Project details"
-                  className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500 transition-colors resize-none"
-                  value={formData.message}
-                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  required
-                ></textarea>
-              </div>
-            </div>
-
-            {/* Submit Button */}
-            <button
-              type="submit"
-              className="w-full py-4 bg-orange-600 hover:bg-orange-700 text-white font-bold text-sm rounded-lg shadow-md hover:shadow-lg transition-all duration-200 uppercase tracking-wider"
-            >
-              Get My Free Quote
-            </button>
-          </form>
-        </div>
-
-        {/* Right Side: Sidebar Info */}
-        <div className="space-y-6">
-          {/* Top Info Box */}
-          <div className="bg-orange-50 border border-orange-100 rounded-2xl p-5 flex items-start gap-4">
-            <div className="p-2 bg-orange-600 rounded-lg text-white shrink-0 mt-0.5">
-              <Clock className="w-5 h-5" />
-            </div>
-            <div>
-              <h4 className="font-bold text-slate-900 text-sm mb-1">Need help with an online class?</h4>
-              <p className="text-xs text-slate-600 leading-relaxed">
-                Our support team is available 7 days a week to review your needs and provide a custom quote.
-              </p>
+            <div className="pt-2">
+              <button className="inline-flex items-center gap-2 px-5 py-2.5 bg-orange-600 hover:bg-orange-700 text-white font-bold text-xs uppercase tracking-widest rounded transition-all duration-200">
+                Get Help <ArrowRight className="w-3.5 h-3.5" />
+              </button>
             </div>
           </div>
 
-          {/* Trust List Container */}
-          <div className="bg-white border border-orange-100 rounded-2xl p-6 shadow-sm">
-            <h3 className="text-xs font-extrabold tracking-wider text-slate-900 uppercase border-b border-slate-100 pb-4 mb-4">
-              Why Students Trust Us
-            </h3>
-            <ul className="space-y-4">
-              {trustPoints.map((point, index) => (
-                <li key={index} className="flex items-center gap-3">
-                  <div className="w-7 h-7 rounded-full bg-slate-50 flex items-center justify-center border border-slate-100 shrink-0">
-                    {point.icon}
-                  </div>
-                  <span className="text-xs font-semibold text-slate-700">{point.text}</span>
-                </li>
-              ))}
-            </ul>
+          {/* Right Image Grid Column */}
+          <div className="lg:col-span-7">
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl shadow-slate-200">
+              <img 
+                src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=1000" 
+                alt="Students studying together" 
+                className="w-full h-[360px] object-cover"
+              />
+              {/* Subtle visual glow backdrop modifier */}
+              <div className="absolute inset-0 bg-linear-to-tr from-orange-600/10 via-transparent to-transparent pointer-events-none" />
+            </div>
           </div>
-        </div>
 
+        </div>
       </section>
 
-      {/* 3. Features Grid Section */}
-      <section className="bg-slate-100/60 border-t border-b border-slate-200/50 py-16 px-4">
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-          {featureCards.map((card, index) => (
-            <div key={index} className="flex gap-4">
-              <div className="w-10 h-10 rounded-full bg-indigo-50 border border-indigo-100 flex items-center justify-center shrink-0">
+      {/* SECTION 2: 4-COLUMN HIGHLIGHT CARDS */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          {highlights.map((card, idx) => (
+            <div 
+              key={idx} 
+              className={`rounded-xl p-6 flex flex-col justify-between min-h-[160px] transition-all duration-200 ${card.bg}`}
+            >
+              <div className="w-9 h-9 rounded-lg flex items-center justify-center bg-slate-50/10 border border-white/10 shrink-0">
                 {card.icon}
               </div>
-              <div>
-                <h3 className="font-bold text-slate-900 text-base mb-2">{card.title}</h3>
-                <p className="text-xs text-slate-600 leading-relaxed">{card.desc}</p>
+              <div className="mt-4 space-y-1">
+                <h3 className={`font-extrabold text-sm tracking-tight ${card.textColor}`}>
+                  {card.title}
+                </h3>
+                <p className={`text-[11px] leading-normal ${card.descColor}`}>
+                  {card.desc}
+                </p>
               </div>
             </div>
           ))}
         </div>
       </section>
 
-      {/* 4. CTA Banner Section with Background Image */}
+      {/* SECTION 3: SUBJECTS GRID DISPLAY */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
+        
+        {/* Section Heading Header */}
+        <div className="max-w-xl mx-auto mb-12 space-y-2">
+          <h2 className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">
+            Subjects We Support
+          </h2>
+          <p className="text-xs text-slate-500 tracking-wide">
+            Select your subject below to get a custom quote for your specific needs.
+          </p>
+        </div>
+
+        {/* 4 Column Dense Responsive Grid Layout */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 text-left">
+          {subjects.map((subj, index) => (
+            <div 
+              key={index}
+              className="bg-white border border-slate-100 hover:border-orange-200 rounded-xl p-4 flex flex-col justify-between h-[90px] shadow-2xs hover:shadow-md transition-all duration-200 group cursor-pointer"
+            >
+              <div className="flex items-center gap-2.5">
+                <div className="w-7 h-7 rounded-md bg-slate-50 group-hover:bg-orange-50 flex items-center justify-center border border-slate-100 transition-colors">
+                  {subj.icon}
+                </div>
+                <span className="font-bold text-xs sm:text-sm text-slate-800 tracking-tight group-hover:text-orange-600 transition-colors">
+                  {subj.name}
+                </span>
+              </div>
+              
+              <div className="text-[10px] font-bold text-orange-600/70 group-hover:text-orange-600 tracking-wider flex items-center gap-1 mt-2">
+                Get Help <ArrowRight className="w-2.5 h-2.5 transform group-hover:translate-x-0.5 transition-transform" />
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* SECTION 4: DARK LANDSCAPE OVERLAY BANNER */}
       <section 
-        className="relative bg-cover bg-center py-24 px-4 text-center overflow-hidden"
+        className="relative bg-cover bg-center py-20 px-4 text-center"
         style={{ 
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80&w=1200')` 
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&q=80&w=1200')` 
         }}
       >
-        <div className="relative z-10 max-w-2xl mx-auto text-white">
-          <h2 className="text-3xl md:text-4xl font-bold mb-3 tracking-tight">Ready to Get Started?</h2>
-          <p className="text-sm text-slate-200 opacity-90 mb-6 max-w-md mx-auto">
-            Stop stressing over coursework. Let our experts handle it.
+        <div className="relative z-10 max-w-2xl mx-auto text-white space-y-4">
+          <h2 className="text-2xl sm:text-3xl font-black tracking-tight">
+            Don't Let Online Classes Overwhelm You
+          </h2>
+          <p className="text-[11px] sm:text-xs text-slate-300 max-w-lg mx-auto font-medium leading-relaxed opacity-95">
+            Get the grade you deserve without the sleepless nights. Our USA-based support team is ready to provide a custom quote for your specific needs.
           </p>
-          <button className="px-6 py-3 bg-orange-600 hover:bg-orange-700 text-white font-bold text-xs uppercase tracking-wider rounded transition-all duration-200 shadow-lg">
-            Get Help Now
-          </button>
+          <div className="pt-2">
+            <button className="px-6 py-2.5 bg-orange-600 hover:bg-orange-700 text-white font-bold text-xs uppercase tracking-widest rounded transition-all duration-200 shadow-lg">
+              Get Help Now
+            </button>
+          </div>
         </div>
       </section>
 
