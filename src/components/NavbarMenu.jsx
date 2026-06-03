@@ -47,7 +47,7 @@ const NavbarMenu = memo(({ mobile = false, onItemClick }) => {
   }
 
   return (
-    <ul className='hidden lg:flex items-center gap-8 text-[15px]'>
+    <ul className='hidden lg:flex items-center gap-8 text-base'>
       {MENU_ITEMS.map((item) => (
         <li key={`${item.label}-${item.to}`}>
           <Link to={item.to} className={desktopLinkClass(isItemActive(item))}>

@@ -9,17 +9,17 @@ const Navbar = memo(() => {
   const closeMenu = useCallback(() => setMenuOpen(false), []);
 
   return (
-    <nav className='bg-[#f2f2f2] border-b border-gray-200'>
+    <nav className='bg-white border-b border-gray-200'>
       <div className='container mx-auto px-4'>
-        <div className='flex items-center justify-between h-16'>
+        <div className='flex items-center justify-between h-20'>
           <Link
             to={ROUTES.HOME}
             className='inline-flex items-center gap-2.5 shrink-0'
           >
-            <span className='w-5 h-5 rounded-md bg-orange-500 text-white flex items-center justify-center'>
-              <GraduationCap size={12} />
+            <span className='w-12 h-12 rounded-lg bg-orange-500 text-white flex items-center justify-center'>
+              <GraduationCap size={28} />
             </span>
-            <span className='text-black font-semibold text-lg tracking-tight'>
+            <span className='text-black font-semibold text-lg md:text-xl tracking-tight'>
               Online Class Writers
             </span>
           </Link>
