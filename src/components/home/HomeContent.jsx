@@ -16,7 +16,7 @@ const HomeContent = memo(() => {
       <WhyChooseSection />
       <OnlineHelpCtaSection />
       <ServicesSection />
-         <ExpertTutorsSection />
+      <ExpertTutorsSection />
     </>
   );
 });
