@@ -29,10 +29,10 @@ const Navbar = memo(() => {
           <div className="flex items-center gap-2">
             <button
               type="button"
-              className="hidden xl:inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-400 text-white font-semibold text-sm px-5 py-2 rounded-md transition-colors"
+              className="hidden xl:inline-flex items-center gap-2 bg-primary  text-white font-semibold text-sm px-5 py-2 rounded-md transition-colors"
             >
               Get Help
-              <ArrowRight size={14} />
+              <ArrowRight size={16} />
             </button>
 
             <button
@@ -59,10 +59,10 @@ const Navbar = memo(() => {
 
             <button
               type="button"
-              className="mt-3 w-full inline-flex items-center justify-center gap-2 bg-orange-500 hover:bg-orange-400 text-white font-semibold text-sm px-5 py-2.5 rounded-md transition-colors"
+              className="mt-3 w-full inline-flex items-center justify-center gap-2 bg-primary hover:bg-orange-400 text-white font-semibold text-sm px-5 py-2.5 rounded-md transition-colors"
             >
               Get Help
-              <ArrowRight size={14} />
+              <ArrowRight size={16} />
             </button>
           </div>
         </div>

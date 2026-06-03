@@ -48,7 +48,7 @@ const Footer = memo(() => {
 
             <button
               type="button"
-              className="mt-5 bg-orange-500 hover:bg-orange-400 text-white px-5 py-2.5 rounded-md transition-colors"
+              className="mt-5 bg-primary hover:bg-orange-400 text-white px-5 py-2.5 rounded-md transition-colors"
             >
               Get Help Now
             </button>
