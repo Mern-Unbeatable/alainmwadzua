@@ -5,7 +5,7 @@ const HERO_RIGHT_IMAGE = "/heroRight.webp";
 
 const HeroSection = memo(() => {
   return (
-    <section className="relative isolate overflow-hidden w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] pt-36">
+    <section className="relative isolate overflow-hidden w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] pt-40">
       <div
         className="pointer-events-none absolute inset-0 z-0  bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${HERO_BACKGROUND_IMAGE})` }}

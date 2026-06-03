@@ -5,9 +5,9 @@ import Footer from "./Footer";
 
 const Layout = memo(() => {
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col">
+    <div className="min-h-screen overflow-x-hidden bg-gray-50 flex flex-col">
       <Navbar />
-      <main className="container mx-auto px-4 py-0 flex-1">
+      <main className="container mx-auto px-4 pt-20 py-0 flex-1">
         <Outlet />
       </main>
       <Footer />
