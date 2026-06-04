@@ -20,43 +20,40 @@ const HELP_TIMING = [
 
 const OnlineHelpCtaSection = memo(() => {
   return (
-    <section className="relative isolate overflow-hidden bg-[#0f1d4a] py-12 sm:py-16 lg:py-20">
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,102,0,0.38),transparent_30%),radial-gradient(circle_at_bottom_right,rgba(255,255,255,0.08),transparent_28%)]" />
+    <section className="relative isolate overflow-hidden bg-[#0F1C3F] py-16 sm:py-20 lg:py-24">
+      <div className="pointer-events-none absolute left-0 top-0 h-[600px] w-[700px] -translate-x-1/3 -translate-y-1/3 bg-[radial-gradient(circle_closest-side,rgba(255,102,0,0.55),transparent)]" />
 
-      <div className="container mx-auto px-4">
-        <div className="grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-12">
+      <div className="container relative z-10 mx-auto px-4 ">
+        <div className="grid items-center gap-12 lg:grid-cols-[1fr_1.1fr] lg:gap-16">
           <div className="max-w-xl text-white">
-            <p className="text-sm font-semibold uppercase tracking-[0.28em] text-white/70">
-              Online Class Help
-            </p>
-
-            <h2 className="mt-4 text-4xl font-semibold leading-tight sm:text-5xl lg:text-[3.4rem]">
-              Are You Looking to <span className="text-primary">Hire Someone</span> To Take Your Online Class?
+            <h2 className="text-4xl font-bold leading-[1.35] tracking-tight sm:text-5xl lg:text-[44px]">
+              Are You Looking to{" "}
+              <span className="text-primary">Hire Someone</span> To Take Your Online Class?
             </h2>
 
-            <ul className="mt-6 space-y-3 text-sm font-medium uppercase tracking-wide text-white/85 sm:text-[0.95rem]">
-              <li>We can take your online class.</li>
-              <li>We take your online tests.</li>
-              <li>We take your online exams.</li>
-              <li>We take your online quizzes.</li>
+            <ul className="mt-8 space-y-2 pl-5 text-sm sm:text-[15px] font-medium text-white/90 list-disc marker:text-white">
+              <li className="uppercase tracking-wide">WE CAN TAKE YOUR ONLINE CLASS!</li>
+              <li>We Take Your Online Tests!</li>
+              <li>We Take Your Online Exams!</li>
+              <li>We Take Your Online Quizzes!</li>
             </ul>
           </div>
 
-          <div className="rounded-4xl bg-white p-4 shadow-[0_18px_60px_rgba(15,23,42,0.22)] sm:p-6 lg:p-7">
-            <form className="space-y-5">
+          <div className="rounded-lg bg-white p-6 shadow-2xl sm:p-8 lg:p-10">
+            <form className="space-y-6">
               <div>
-                <p className="text-sm font-semibold text-slate-800">
+                <p className="mb-3 text-base font-medium text-slate-800">
                   What do you need help with
                 </p>
-                <div className="mt-3 flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-2.5">
                   {HELP_TOPICS.map((topic, index) => (
                     <button
                       key={topic}
                       type="button"
-                      className={`rounded-full border px-3 py-1.5 text-[11px] font-medium transition-colors sm:px-3.5 sm:text-xs ${
+                      className={`rounded-full border px-4 py-1.5 text-sm font-medium transition-colors sm:px-5 sm:text-[13px] ${
                         index === 0
                           ? "border-primary bg-primary text-white"
-                          : "border-slate-200 bg-white text-slate-600 hover:border-primary hover:text-primary"
+                          : "border-slate-200 bg-white text-slate-500 hover:border-primary hover:text-primary"
                       }`}
                     >
                       {topic}
@@ -66,18 +63,18 @@ const OnlineHelpCtaSection = memo(() => {
               </div>
 
               <div>
-                <p className="text-sm font-semibold text-slate-800">
+                <p className="mb-3 text-base font-medium text-slate-800">
                   How soon do you need help?
                 </p>
-                <div className="mt-3 flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-2.5">
                   {HELP_TIMING.map((item, index) => (
                     <button
                       key={item}
                       type="button"
-                      className={`rounded-full border px-3 py-1.5 text-[11px] font-medium transition-colors sm:px-3.5 sm:text-xs ${
+                      className={`rounded-full border px-4 py-1.5 text-sm font-medium transition-colors sm:px-5 sm:text-[13px] ${
                         index === 0
                           ? "border-primary bg-primary text-white"
-                          : "border-slate-200 bg-white text-slate-600 hover:border-primary hover:text-primary"
+                          : "border-slate-200 bg-white text-slate-500 hover:border-primary hover:text-primary"
                       }`}
                     >
                       {item}
@@ -87,76 +84,64 @@ const OnlineHelpCtaSection = memo(() => {
               </div>
 
               <div>
-                <label className="mb-2 block text-xs font-semibold uppercase tracking-wide text-slate-500">
+                <label className="mb-2 block text-base text-[#0F1C3F]">
                   What subject or course is this for?
                 </label>
                 <input
                   type="text"
                   placeholder="subject/course name/course code"
-                  className="h-11 w-full rounded-lg border border-slate-200 bg-slate-50 px-4 text-sm text-slate-700 outline-none transition placeholder:text-slate-400 focus:border-primary focus:bg-white"
+                  className="h-11 w-full rounded-md border border-slate-200 bg-[#F9FAFB] px-4 text-sm text-slate-700 outline-none transition placeholder:text-slate-400 focus:border-[#FF6600] focus:bg-white"
                 />
               </div>
 
-              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+              <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
                 <div>
-                  <label className="mb-2 block text-xs font-semibold uppercase tracking-wide text-slate-500">
+                  <label className="mb-2 block text-base uppercase  text-[#0F1C3F]">
                     Name
                   </label>
                   <input
                     type="text"
                     placeholder="your name"
-                    className="h-11 w-full rounded-lg border border-slate-200 bg-slate-50 px-4 text-sm text-slate-700 outline-none transition placeholder:text-slate-400 focus:border-primary focus:bg-white"
+                    className="h-11 w-full rounded-md border border-slate-200 bg-[#F9FAFB] px-4 text-sm text-slate-700 outline-none transition placeholder:text-slate-400 focus:border-[#FF6600] focus:bg-white"
                   />
                 </div>
                 <div>
-                  <label className="mb-2 block text-xs font-semibold uppercase tracking-wide text-slate-500">
+                  <label className="mb-2 block text-base uppercase  text-[#0F1C3F]">
                     Email Address
                   </label>
                   <input
                     type="email"
                     placeholder="your@email.com"
-                    className="h-11 w-full rounded-lg border border-slate-200 bg-slate-50 px-4 text-sm text-slate-700 outline-none transition placeholder:text-slate-400 focus:border-primary focus:bg-white"
-                  />
-                </div>
-              </div>
-
-              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                <div>
-                  <label className="mb-2 block text-xs font-semibold uppercase tracking-wide text-slate-500">
-                    Phone Number
-                  </label>
-                  <input
-                    type="tel"
-                    placeholder="your phone number"
-                    className="h-11 w-full rounded-lg border border-slate-200 bg-slate-50 px-4 text-sm text-slate-700 outline-none transition placeholder:text-slate-400 focus:border-primary focus:bg-white"
-                  />
-                </div>
-                <div>
-                  <label className="mb-2 block text-xs font-semibold uppercase tracking-wide text-slate-500">
-                    Deadline
-                  </label>
-                  <input
-                    type="text"
-                    placeholder="when do you need it?"
-                    className="h-11 w-full rounded-lg border border-slate-200 bg-slate-50 px-4 text-sm text-slate-700 outline-none transition placeholder:text-slate-400 focus:border-primary focus:bg-white"
+                    className="h-11 w-full rounded-md border border-slate-200 bg-[#F9FAFB] px-4 text-sm text-slate-700 outline-none transition placeholder:text-slate-400 focus:border-[#FF6600] focus:bg-white"
                   />
                 </div>
               </div>
 
               <div>
-                <label className="mb-2 block text-xs font-semibold uppercase tracking-wide text-slate-500">
+                <label className="mb-2 block text-base uppercase  text-[#0F1C3F]">
+                  Phone Number
+                </label>
+                <input
+                  type="tel"
+                  placeholder="your phone number"
+                  className="h-11 w-full rounded-md border border-slate-200 bg-[#F9FAFB] px-4 text-sm text-slate-700 outline-none transition placeholder:text-slate-400 focus:border-[#FF6600] focus:bg-white"
+                />
+              </div>
+
+              <div>
+                <label className="mb-2 block text-base uppercase  text-[#0F1C3F]">
                   Message
                 </label>
                 <textarea
                   rows="4"
-                  placeholder="Message / Project details"
-                  className="w-full rounded-lg border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-700 outline-none transition placeholder:text-slate-400 focus:border-primary focus:bg-white"
+                  placeholder="Message/Project details"
+                  className="w-full resize-none rounded-md border border-slate-200 bg-[#F9FAFB] px-4 py-3 text-sm text-slate-700 outline-none transition placeholder:text-slate-400 focus:border-[#FF6600] focus:bg-white"
                 />
               </div>
 
               <button
                 type="button"
-                className="inline-flex h-12 w-full items-center justify-center rounded-lg bg-primary text-sm font-semibold text-white transition-colors hover:opacity-90"
+                className="inline-flex py-4 w-full items-center justify-center rounded-md bg-primary text-sm text-white transition-opacity hover:opacity-90"
               >
                 Get My Free Quote
               </button>

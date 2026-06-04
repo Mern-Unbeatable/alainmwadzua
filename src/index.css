@@ -32,7 +32,9 @@ body {
     transform: translateX(4px);
   }
 }
-
+button {
+  cursor: pointer;
+}
 @layer utility {
   .animate-nav-arrow {
     animation: nav-arrow 1.2s ease-in-out infinite;
