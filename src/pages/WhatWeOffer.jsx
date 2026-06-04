@@ -10,10 +10,26 @@ const OFFER_ITEMS = [
 ];
 
 const GRID_CARDS = [
-  { title: "Complete Online Class Help", desc: "Say no more to tackle whole online classes. We handle discussions, assignments, quizzes, even tests." , variant: 'light'},
-  { title: "Exam Preparation & Test Taking", desc: "Need help revising or understand a test format. Get exam prep support.", variant: 'dark'},
-  { title: "Homework & Assignment Help", desc: "We handle coursework and assignment help of all kinds.", variant: 'accent'},
-  { title: "Project & Essay Writing Help", desc: "Coursework, case study projects and essays — we cover it.", variant: 'light'},
+  {
+    title: "Complete Online Class Help",
+    desc: "Say no more to tackle whole online classes. We handle discussions, assignments, quizzes, even tests.",
+    variant: "light",
+  },
+  {
+    title: "Exam Preparation & Test Taking",
+    desc: "Need help revising or understand a test format. Get exam prep support.",
+    variant: "dark",
+  },
+  {
+    title: "Homework & Assignment Help",
+    desc: "We handle coursework and assignment help of all kinds.",
+    variant: "accent",
+  },
+  {
+    title: "Project & Essay Writing Help",
+    desc: "Coursework, case study projects and essays — we cover it.",
+    variant: "light",
+  },
 ];
 
 const WhatWeOffer = () => {

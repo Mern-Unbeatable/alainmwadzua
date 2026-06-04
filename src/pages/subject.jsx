@@ -118,13 +118,11 @@ const Subject = () => {
         image={"https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=1000"}
       />
 
-      {/* SECTION 2: 4-COLUMN HIGHLIGHT CARDS */}
       <SubjectHighlights highlights={highlights} />
 
-      {/* SECTION 3: SUBJECTS GRID DISPLAY */}
       <SubjectsGrid subjects={subjects} />
 
-      {/* SECTION 4: DARK LANDSCAPE OVERLAY BANNER */}
+     
       <CTASection />
 
     </div>
