@@ -1,7 +1,7 @@
 import React from "react";
 import WhatWeOfferHeader from "../components/whatweoffer/WhatWeOfferHeader";
 import GridCards from "../components/whatweoffer/GridCards";
-import CTASection from "../components/whatweoffer/CTASection";
+import CTASection from "../components/CTASection";
 
 const OFFER_ITEMS = [
   { title: "Complete Online Class Help", subtitle: "Full Course Support" },
@@ -21,7 +21,12 @@ const WhatWeOffer = () => {
     <div className="bg-white">
       <WhatWeOfferHeader offerItems={OFFER_ITEMS} />
       <GridCards gridCards={GRID_CARDS} />
-      <CTASection />
+      <CTASection
+        title="Need help with your academic workload?"
+        description="Send us your subject, deadline, and requirements. We will handle the rest with the right support for your course."
+        buttonText="Get Help Now"
+        image="/cta.webp"
+      />
     </div>
   );
 };
