@@ -12,8 +12,8 @@ const QUOTE_TOPICS = [
 
 const CustomQuoteSection = memo(() => {
   return (
-    <section className="py-14 sm:py-16 lg:py-20 bg-white">
-      <div className="mx-auto max-w-5xl rounded-2xl bg-white shadow-[0_10px_30px_rgba(15,23,42,0.08)] border border-slate-100 px-5 py-6 sm:px-8 sm:py-7">
+    <section className="py-14 sm:py-16 lg:py-20 bg-white border ">
+      <div className="mx-auto container rounded-lg bg-white shadow-[0_10px_30px_rgba(15,23,42,0.08)] border border-slate-100 px-5 py-6 sm:px-8 sm:py-7">
         <div className="text-center">
           <h2 className="text-2xl sm:text-3xl font-semibold text-slate-800">
             Get Your Free Custom Quote

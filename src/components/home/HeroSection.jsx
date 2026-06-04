@@ -13,14 +13,14 @@ const HeroSection = memo(() => {
         aria-hidden="true"
       />
 
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center pb-0 sm:pb-0 lg:pb-0">
           <div className="relative z-30 max-w-3xl">
             <p className="inline-flex items-center rounded-full bg-orange-500/10 text-primary px-4 py-2 text-sm font-semibold mb-6">
               Online Class Writers
             </p>
 
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-medium tracking-tight text-slate-900 leading-[1.05]">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-medium tracking-tight text-slate-900 leading-[1.05] ">
               Pay Someone to Take My Online Classes For Me
             </h1>
 
