@@ -1,4 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 @import 'tailwindcss';
+
+@theme {
+  --color-primary: #FF6600;
+}
 
 :root {
   --primary-text-color: #373737;
@@ -6,6 +11,16 @@
   --secondary-text-color: #FFFFFF;
   --ternary-text-color: #525252;
   --button-bg: #2B6A0A;
+}
+
+html,
+body {
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
+}
+
+#root {
+  overflow-x: hidden;
 }
 
 @keyframes nav-arrow {
@@ -17,7 +32,9 @@
     transform: translateX(4px);
   }
 }
-
+button {
+  cursor: pointer;
+}
 @layer utility {
   .animate-nav-arrow {
     animation: nav-arrow 1.2s ease-in-out infinite;
