@@ -90,6 +90,7 @@ module.exports = (env, argv) => {
       hot: true,
       open: true,
       compress: true,
+      allowedHosts: 'all',
       // Proxy /api/* → backend so browser never sees a CORS error in dev
       proxy: {
         '/api': {
