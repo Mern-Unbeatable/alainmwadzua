@@ -1,72 +1,106 @@
 import React, { memo } from "react";
-import { Award, BookOpen, CheckCircle, Clock } from "lucide-react";
+import { BookOpen, GraduationCap, Star, Zap, ArrowRight } from "lucide-react";
 
-const IMAGES = [
-  "/tutors/tutor1.jpg",
-  "/tutors/tutor2.jpg",
-  "/tutors/tutor3.jpg",
-  "/tutors/tutor4.jpg",
-  "/tutors/tutor5.jpg",
-  "/tutors/tutor6.jpg",
-];
+const RIGHT_SIDE_IMAGE = "/expertise.webp";
 
 const ExpertTutorsSection = memo(() => {
   return (
-    <section className="py-14 sm:py-16 lg:py-20 bg-white">
-      <div className="container mx-auto px-4">
-        <div className="grid items-center gap-8 lg:grid-cols-2">
-          <div className="max-w-xl">
-            <h2 className="text-3xl sm:text-4xl font-semibold text-slate-900">
+    <section className="pb-14 sm:pb-16 lg:pb-20 bg-white">
+      <div className="container mx-auto px-4 ">
+        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+          <div className="max-w-2xl">
+            <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-semibold text-slate-900 leading-[1.2]">
               Expert Tutors Across All Major Disciplines
             </h2>
-            <p className="mt-4 text-slate-600 leading-7">
+
+            <p className="mt-5 text-base text-slate-600 leading-relaxed">
               Whether you&apos;re struggling with advanced calculus, nursing
               prerequisites, or extensive research papers in history or
-              Management, our team of degree-holding specialists is prepared to
-              step in. We will perfectly take your Class and get you A–Grades!
+              Management, our team of degree- holding specialists is prepared to
+              step in. We will perfectly take your Class and get you A-Grades!
             </p>
 
-            <ul className="mt-6 space-y-2 text-sm text-slate-700">
-              <li>• Discussion Posts & Replies</li>
-              <li>• Full Semester Class Management</li>
-              <li>• Homework & Assignments</li>
-              <li>• Midterms & Final Exams</li>
+            <ul className="mt-6 space-y-3">
+              {[
+                "Discussion Posts & Replies",
+                "Full Semester Class Management",
+                "Homework & Assignments",
+                "Midterms & Final Exams",
+              ].map((item) => (
+                <li
+                  key={item}
+                  className="flex items-center gap-3 text-base font-semibold text-slate-800"
+                >
+                  <span className="h-1.5 w-1.5 rounded-full bg-slate-800 shrink-0"></span>
+                  {item}
+                </li>
+              ))}
             </ul>
 
-            <div className="mt-6 flex flex-wrap items-center gap-3">
-              <div className="inline-flex items-center gap-2 rounded-md border border-slate-200 bg-white px-3 py-2 text-sm">
-                <Award size={16} className="text-primary" /> Exams, Essays & Papers
+            <div className="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-3">
+              <div className="flex items-center gap-3 rounded-lg border border-slate-200 bg-white p-3 shadow-sm">
+                <BookOpen
+                  size={20}
+                  strokeWidth={1.5}
+                  className="text-primary shrink-0"
+                />
+                <span className="text-sm font-semibold text-slate-700 leading-tight">
+                  Exams, Essays &<br />
+                  Papers
+                </span>
               </div>
-              <div className="inline-flex items-center gap-2 rounded-md border border-slate-200 bg-white px-3 py-2 text-sm">
-                <BookOpen size={16} className="text-primary" /> Entire Online Classes
+
+              <div className="flex items-center gap-3 rounded-lg border border-slate-200 bg-white p-3 shadow-sm">
+                <GraduationCap
+                  size={20}
+                  strokeWidth={1.5}
+                  className="text-primary shrink-0"
+                />
+                <span className="text-sm font-semibold text-slate-700 leading-tight">
+                  Entire Online
+                  <br />
+                  Classes
+                </span>
               </div>
-              <div className="inline-flex items-center gap-2 rounded-md border border-slate-200 bg-white px-3 py-2 text-sm">
-                <CheckCircle size={16} className="text-primary" /> Top Grades – A or B
+
+              <div className="flex items-center gap-3 rounded-lg border border-slate-200 bg-white p-3 shadow-sm">
+                <Star
+                  size={20}
+                  strokeWidth={1.5}
+                  className="text-primary shrink-0"
+                />
+                <span className="text-sm font-semibold text-slate-700 leading-tight">
+                  Top Grades-
+                  <br />A or B
+                </span>
               </div>
-              <div className="inline-flex items-center gap-2 rounded-md border border-slate-200 bg-white px-3 py-2 text-sm">
-                <Clock size={16} className="text-primary" /> Fast Delivery
+
+              <div className="flex items-center gap-3 rounded-lg border border-slate-200 bg-white p-3 shadow-sm">
+                <Zap
+                  size={20}
+                  strokeWidth={1.5}
+                  className="text-primary shrink-0"
+                />
+                <span className="text-sm font-semibold text-slate-700 leading-tight">
+                  Fast
+                  <br />
+                  Delivery
+                </span>
               </div>
             </div>
 
-            <button className="mt-6 inline-flex items-center gap-2 rounded-md bg-primary px-5 py-3 text-sm font-semibold text-white">
+            <button className="mt-8 inline-flex items-center gap-2 rounded-md bg-primary px-6 py-3 text-sm font-bold text-white transition-opacity hover:opacity-90">
               View All Subjects
+              <ArrowRight size={16} strokeWidth={2.5} />
             </button>
           </div>
 
-          <div className="flex justify-end">
-            <div className="grid grid-cols-1 gap-4">
-              <img src={IMAGES[0]} alt="tutor" className="h-40 w-40 rounded-xl object-cover shadow-md" />
-              <div className="grid gap-4 sm:grid-cols-1 lg:grid-cols-1">
-                <img src={IMAGES[1]} alt="tutor" className="h-28 w-28 rounded-xl object-cover shadow-md" />
-                <img src={IMAGES[2]} alt="tutor" className="h-28 w-28 rounded-xl object-cover shadow-md" />
-              </div>
-            </div>
-
-            <div className="ml-4 grid gap-4">
-              <img src={IMAGES[3]} alt="tutor" className="h-28 w-28 rounded-xl object-cover shadow-md" />
-              <img src={IMAGES[4]} alt="tutor" className="h-28 w-28 rounded-xl object-cover shadow-md" />
-              <img src={IMAGES[5]} alt="tutor" className="h-40 w-40 rounded-xl object-cover shadow-md" />
-            </div>
+          <div className="flex justify-center lg:justify-end">
+            <img
+              src={RIGHT_SIDE_IMAGE}
+              alt="Expert Tutors Grid"
+              className="w-full max-w-[550px] object-contain drop-shadow-sm"
+            />
           </div>
         </div>
       </div>
