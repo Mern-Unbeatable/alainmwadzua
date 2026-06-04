@@ -13,7 +13,7 @@ const HeroSection = memo(() => {
         aria-hidden="true"
       />
 
-      <div className="container mx-auto">
+      <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center pb-0 sm:pb-0 lg:pb-0">
           <div className="relative z-30 max-w-3xl">
             <p className="inline-flex items-center rounded-full bg-orange-500/10 text-primary px-4 py-2 text-sm font-semibold mb-6">
