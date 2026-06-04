@@ -70,34 +70,41 @@ const BENEFITS = [
 
 const WhyChooseSection = memo(() => {
   return (
-    <section className="py-14 sm:py-16 lg:py-20 bg-[#F3F3F366]">
-      <div className="container mx-auto px-4">
-        <div className="max-w-3xl">
+    <section className="py-14 sm:py-16 lg:py-20 bg-[#FAFAFA]">
+      <div className="container mx-auto px-4 l">
+        <div className="max-w-3xl mb-14 sm:mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-[#222222] to-[#FF6600] bg-clip-text text-transparent">
             Why Choose <span>Online Class Writers?</span>
           </h2>
-          <p className="mt-3 max-w-2xl text-sm sm:text-base leading-7 text-slate-600">
+          <p className="mt-4 max-w-2xl text-sm sm:text-base leading-relaxed text-slate-600">
             We deliver academic success without stress. We guarantee A or B, or
             you get a 100% Refund.
           </p>
         </div>
 
-        <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-14 sm:gap-y-16">
           {BENEFITS.map(({ title, description, icon: Icon }) => (
             <article
               key={title}
-              className="relative rounded-2xl border border-white/70 bg-white px-5 pb-6 pt-10 text-center shadow-[0_12px_35px_rgba(15,23,42,0.05)]"
+              className="relative rounded-lg border border-slate-100 bg-white px-6 pb-8 pt-12 text-center shadow-[0_4px_20px_rgba(0,0,0,0.03)]"
             >
-              <span className="absolute left-1/2 top-0 inline-flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 rotate-45 items-center justify-center rounded-xl border border-orange-200 bg-orange-50 text-primary shadow-sm">
-                <span className="-rotate-45">
-                  <Icon size={18} />
-                </span>
-              </span>
+              <div className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2">
+                <div className="relative flex h-16 w-16 items-center justify-center">
+                  <div className="absolute -translate-y-2 h-10.5 w-10.5 rotate-45 rounded-sm border-[1.5px] border-orange-300"></div>
+                  <div className="absolute translate-y-1 z-10 flex h-10.5 w-10.5 rotate-45 items-center justify-center rounded-sm bg-[#FFDCC3]">
+                    <Icon
+                      size={20}
+                      className="-rotate-45 text-[#F97316]"
+                      strokeWidth={1.5}
+                    />
+                  </div>
+                </div>
+              </div>
 
-              <h3 className="text-lg font-semibold leading-6 text-slate-800">
+              <h3 className="text-lg font-bold leading-tight text-slate-800">
                 {title}
               </h3>
-              <p className="mt-3 text-sm leading-6 text-slate-600">
+              <p className="mt-3 text-sm leading-relaxed text-slate-500">
                 {description}
               </p>
             </article>
