@@ -25,6 +25,7 @@ import {
   Network, 
   Binary 
 } from 'lucide-react';
+import CTASection from '../components/CTASection';
 
 const Subject = () => {
 
@@ -215,26 +216,7 @@ const Subject = () => {
       </section>
 
       {/* SECTION 4: DARK LANDSCAPE OVERLAY BANNER */}
-      <section 
-        className="relative bg-cover bg-center py-20 px-4 text-center"
-        style={{ 
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&q=80&w=1200')` 
-        }}
-      >
-        <div className="relative z-10 max-w-2xl mx-auto text-white space-y-4">
-          <h2 className="text-2xl sm:text-3xl font-black tracking-tight">
-            Don't Let Online Classes Overwhelm You
-          </h2>
-          <p className="text-[11px] sm:text-xs text-slate-300 max-w-lg mx-auto font-medium leading-relaxed opacity-95">
-            Get the grade you deserve without the sleepless nights. Our USA-based support team is ready to provide a custom quote for your specific needs.
-          </p>
-          <div className="pt-2">
-            <button className="px-6 py-2.5 bg-orange-600 hover:bg-orange-700 text-white font-bold text-xs uppercase tracking-widest rounded transition-all duration-200 shadow-lg">
-              Get Help Now
-            </button>
-          </div>
-        </div>
-      </section>
+ <CTASection/>
 
     </div>
   );

@@ -22,8 +22,8 @@ const WhatWeOffer = () => {
       <WhatWeOfferHeader offerItems={OFFER_ITEMS} />
       <GridCards gridCards={GRID_CARDS} />
       <CTASection
-        title="Need help with your academic workload?"
-        description="Send us your subject, deadline, and requirements. We will handle the rest with the right support for your course."
+        title="Ready to Get Started?"
+        description="Stop stressing over coursework. Let our experts handle it."
         buttonText="Get Help Now"
         image="/cta.webp"
       />
