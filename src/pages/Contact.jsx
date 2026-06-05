@@ -26,7 +26,7 @@ const ContactContent = () => {
     <div className="w-full min-h-screen bg-white font-sans">
       {/* Hero Section */}
       <div 
-        className="relative w-full py-28 bg-cover bg-center flex items-center justify-center"
+        className="relative w-full py-14 md:py-16 lg:py-20 bg-cover h-140 bg-center flex items-center justify-center"
         style={{ 
           backgroundImage: "url('https://images.unsplash.com/photo-1524178232363-1fb2b075b655?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')" 
         }}
@@ -43,12 +43,12 @@ const ContactContent = () => {
       </div>
 
       {/* Main Form Content */}
-      <div className="max-w-4xl mx-auto px-4 py-12">
+      <div className="container mx-auto px-4 py-14 md:py-16 lg:py-20">
         <form className="space-y-8">
           
           {/* Select Your Service */}
           <div>
-            <h3 className="text-xl font-bold text-[#1a2b4c] mb-4">Select Your Service</h3>
+            <h3 className="text-2xl font-bold text-[#1a2b4c] mb-4">Select Your Service</h3>
             <div className="flex flex-wrap gap-3">
               {services.map((service) => (
                 <button
@@ -69,7 +69,7 @@ const ContactContent = () => {
 
           {/* How Urgent Is This? */}
           <div>
-            <h3 className="text-xl font-bold text-[#1a2b4c] mb-4">How Urgent Is This?</h3>
+            <h3 className="text-2xl font-bold text-[#1a2b4c] mb-4">How Urgent Is This?</h3>
             <div className="flex flex-wrap gap-3">
               {urgencies.map((urgency) => (
                 <button
@@ -90,9 +90,9 @@ const ContactContent = () => {
 
           {/* Course Information */}
           <div>
-            <h3 className="text-xl font-bold text-[#1a2b4c] mb-4">Course Information</h3>
+            <h3 className="text-2xl font-bold text-[#1a2b4c] mb-4">Course Information</h3>
             <div className="flex flex-col">
-              <label htmlFor="courseInfo" className="text-sm text-gray-500 mb-1">
+              <label htmlFor="courseInfo" className="text-base text-gray-500 mb-1">
                 Subject / Course Name / Course Code
               </label>
               <input
@@ -106,11 +106,11 @@ const ContactContent = () => {
 
           {/* Your Details */}
           <div>
-            <h3 className="text-xl font-bold text-[#1a2b4c] mb-4">Your Details</h3>
+            <h3 className="text-2xl font-bold text-[#1a2b4c] mb-4">Your Details</h3>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
               <div className="flex flex-col">
-                <label htmlFor="fullName" className="text-sm text-gray-500 mb-1">
+                <label htmlFor="fullName" className="text-base text-gray-500 mb-1">
                   Full Name
                 </label>
                 <input
@@ -121,7 +121,7 @@ const ContactContent = () => {
                 />
               </div>
               <div className="flex flex-col">
-                <label htmlFor="emailAddress" className="text-sm text-gray-500 mb-1">
+                <label htmlFor="emailAddress" className="text-base text-gray-500 mb-1">
                   Email Address
                 </label>
                 <input
@@ -134,7 +134,7 @@ const ContactContent = () => {
             </div>
 
             <div className="flex flex-col mb-6">
-              <label htmlFor="phoneNumber" className="text-sm text-gray-500 mb-1">
+              <label htmlFor="phoneNumber" className="text-base text-gray-500 mb-1">
                 Phone Number (Optional)
               </label>
               <input
@@ -146,7 +146,7 @@ const ContactContent = () => {
             </div>
 
             <div className="flex flex-col">
-              <label htmlFor="message" className="text-sm text-gray-500 mb-1">
+              <label htmlFor="message" className="text-base text-gray-500 mb-1">
                 Special Requirements or Message
               </label>
               <textarea
@@ -159,10 +159,10 @@ const ContactContent = () => {
           </div>
 
           {/* Submit Button */}
-          <div className="flex justify-end pt-4">
+          <div className="flex justify-end pt-2">
             <button
               type="submit"
-              className="bg-[#FF6B00] hover:bg-[#e56000] text-white font-medium py-3 px-8 rounded transition duration-300 shadow-sm"
+              className="bg-primary hover:bg-[#e56000] text-white font-medium py-3 px-8 rounded transition duration-300 shadow-sm"
             >
               Submit Request & Get Quote
             </button>
@@ -170,10 +170,10 @@ const ContactContent = () => {
         </form>
 
         {/* Features / Guarantees Section */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-20">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-14 md:mt-16 lg:mt-20">
           
           {/* Card 1 */}
-          <div className="bg-[#FFF6ED] rounded-xl p-8 flex flex-col items-center text-center">
+          <div className="bg-[#FFF0E6] rounded-xl p-8 flex flex-col items-center text-center">
             <div className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center mb-4">
               <svg className="w-5 h-5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
@@ -184,7 +184,7 @@ const ContactContent = () => {
           </div>
 
           {/* Card 2 */}
-          <div className="bg-[#FFF6ED] rounded-xl p-8 flex flex-col items-center text-center">
+          <div className="bg-[#FFF0E6] rounded-xl p-8 flex flex-col items-center text-center">
             <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center mb-4">
               <svg className="w-5 h-5 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
@@ -195,7 +195,7 @@ const ContactContent = () => {
           </div>
 
           {/* Card 3 */}
-          <div className="bg-[#FFF6ED] rounded-xl p-8 flex flex-col items-center text-center">
+          <div className="bg-[#FFF0E6] rounded-xl p-8 flex flex-col items-center text-center">
             <div className="w-10 h-10 rounded-full bg-orange-100 flex items-center justify-center mb-4">
               <svg className="w-5 h-5 text-[#FF6B00]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
