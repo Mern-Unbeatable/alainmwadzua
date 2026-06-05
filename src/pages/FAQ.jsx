@@ -49,12 +49,12 @@ const FAQ = () => {
   return (
     <div className="w-full flex flex-col font-sans">
       {/* FAQ Section */}
-      <div className="max-w-3xl mx-auto px-4 py-16 w-full">
+      <div className="max-w-4xl mx-auto px-4 py-14 md:py-16 lg:py-20 w-full">
         <div className="text-center mb-10">
-          <h2 className="text-3xl font-bold text-[#1a202c] mb-3">
+          <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-[#1a202c] mb-4">
             Frequently Asked Questions
           </h2>
-          <p className="text-[#4a5568] text-sm md:text-base px-4">
+          <p className="text-[#4a5568] text-base px-4">
             Everything you need to know about our services, pricing, and how we ensure<br className="hidden md:block"/> your academic success.
           </p>
         </div>
@@ -63,16 +63,16 @@ const FAQ = () => {
           {faqData.map((faq, index) => (
             <div 
               key={index} 
-              className="bg-[#FFF6ED] rounded-sm overflow-hidden"
+              className="bg-[#FFF0E6] rounded-sm overflow-hidden"
             >
               <button
                 onClick={() => toggleAccordion(index)}
                 className="w-full flex justify-between items-center p-4 text-left focus:outline-none"
               >
-                <span className="text-[#2D3748] font-medium text-sm">
+                <span className="text-black font-medium text-base">
                   {faq.question}
                 </span>
-                <span className="text-[#A0AEC0] ml-4 transition-transform duration-200 flex-shrink-0">
+                <span className="text-[#464E46] ml-4 transition-transform duration-200 flex-shrink-0">
                   {openIndex === index ? (
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
@@ -90,7 +90,7 @@ const FAQ = () => {
                   openIndex === index ? 'max-h-40 opacity-100 pb-4' : 'max-h-0 opacity-0'
                 }`}
               >
-                <div className="px-4 text-sm text-[#718096] leading-relaxed">
+                <div className="px-4 text-base text-[#3C3C43D9] leading-relaxed">
                   {faq.answer}
                 </div>
               </div>
