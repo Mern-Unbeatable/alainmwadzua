@@ -102,7 +102,7 @@ const AboutContent = () => {
       </section>
 
       {/* 2. Our Story Section */}
-      <section className="max-w-7xl mx-auto px-4 mt-32 mb-24">
+      <section className="container mx-auto px-4 mt-32 mb-24">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           
           {/* Left Text */}
