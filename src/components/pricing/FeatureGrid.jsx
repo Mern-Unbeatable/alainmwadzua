@@ -24,7 +24,12 @@ const FeatureGrid = () => {
     <div className="bg-[#F9F9F9] py-14 md:py-16 lg:py-20 ">
       <div className="container px-4 mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
         {features.map((item, index) => (
-          <div key={index} className="flex flex-col sm:flex-row gap-4">
+          <div
+            key={index}
+            className="flex flex-col sm:flex-row gap-4"
+            data-reveal="card"
+            style={{ '--reveal-delay': `${70 + index * 80}ms` }}
+          >
             <div className="w-12 h-12 rounded-full bg-[#C4D0FD] flex items-center justify-center shrink-0">
               {item.icon}
             </div>

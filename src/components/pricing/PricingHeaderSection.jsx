@@ -2,7 +2,11 @@ import React from 'react';
 
 const PricingHeaderSection = () => {
   return (
-    <header className="text-center pt-14 md:pt-16 lg:pt-20 pb-10 px-4 max-w-4xl mx-auto">
+    <header
+      className="text-center pt-14 md:pt-16 lg:pt-20 pb-10 px-4 max-w-4xl mx-auto"
+      data-reveal="text"
+      style={{ '--reveal-delay': '40ms' }}
+    >
       <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 tracking-tight">
         Get a Fast, Personalized Quote
       </h1>
