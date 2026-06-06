@@ -2,37 +2,55 @@ import React from 'react';
 
 const AboutHeroSection = () => {
   return (
-    <section className="relative w-full h-112.5 flex items-center justify-center">
+    <section className="relative w-full h-[500px] flex items-center justify-center mb-24">
+      {/* Background Image & Dark Overlay */}
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{ backgroundImage: "url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')" }}
       ></div>
-      <div className="absolute inset-0 bg-black/60"></div>
+      <div className="absolute inset-0 bg-[#0B1521]/75"></div>
 
-      <div className="relative z-10 text-center px-4">
-        <div className="border border-white/30 rounded-lg py-6 px-10 md:px-16 bg-black/20 backdrop-blur-sm">
-          <h1 className="text-3xl md:text-5xl font-bold text-white mb-3">
+      {/* Center Content Box with Custom Border */}
+      <div className="relative z-10 w-full max-w-4xl px-4 md:px-8 mt-[-40px]">
+        <div className="relative border-b-2 border-l-2 border-r-2 border-[#F4A261] px-4 md:px-12 pb-10 pt-8">
+          
+          {/* Top Border Segments (Creates the gap for the title) */}
+          <div className="absolute top-0 left-0 w-8 md:w-24 h-[2px] bg-[#F4A261]"></div>
+          <div className="absolute top-0 right-0 w-8 md:w-24 h-[2px] bg-[#F4A261]"></div>
+
+          {/* Floating Title */}
+          <h1 className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-max max-w-[90vw] px-4 text-2xl md:text-[44px] font-bold text-white whitespace-nowrap">
             About Online Class Writers
           </h1>
-          <p className="text-gray-200 text-sm md:text-base max-w-2xl mx-auto">
+
+          {/* Description Text */}
+          <p className="text-gray-100 text-sm md:text-lg mt-6 max-w-2xl mx-auto text-center font-light leading-relaxed">
             The trusted safety net for busy college students striving for academic
             <br className="hidden md:block" /> excellence without the burnout.
           </p>
         </div>
       </div>
 
-      <div className="absolute -bottom-12 left-1/2 -translate-x-1/2 w-[90%] max-w-5xl bg-[#FFF6ED] rounded-xl shadow-lg py-6 px-8 flex flex-wrap justify-between items-center text-center md:text-left z-20">
-        <div className="w-full md:w-auto mb-4 md:mb-0">
-          <h3 className="text-2xl font-bold text-[#1a2b4c]">10+ Years</h3>
-          <p className="text-gray-500 text-xs uppercase tracking-wide mt-1">Industry Leadership</p>
-        </div>
-        <div className="w-full md:w-auto mb-4 md:mb-0">
-          <h3 className="text-2xl font-bold text-[#1a2b4c]">28+ Subjects</h3>
-          <p className="text-gray-500 text-xs uppercase tracking-wide mt-1">Expertise Coverage</p>
-        </div>
-        <div className="w-full md:w-auto">
-          <h3 className="text-2xl font-bold text-[#1a2b4c]">100% Confidential</h3>
-          <p className="text-gray-500 text-xs uppercase tracking-wide mt-1">Student Protection</p>
+      {/* Overlapping Bottom Stats Card */}
+      <div className="absolute -bottom-16 left-1/2 -translate-x-1/2 w-[90%] max-w-5xl bg-[#FFF6ED] rounded-xl shadow-xl py-10 px-8 z-20">
+        <div className="flex flex-col md:flex-row justify-around items-center md:items-start gap-8">
+          {/* Stat Item 1 */}
+          <div className="flex flex-col items-center md:items-start text-center md:text-left">
+            <h3 className="text-2xl md:text-3xl font-bold text-[#14213D] mb-1.5">10+ Years</h3>
+            <p className="text-[#4B5563] text-sm font-medium">Industry Leadership</p>
+          </div>
+          
+          {/* Stat Item 2 */}
+          <div className="flex flex-col items-center md:items-start text-center md:text-left">
+            <h3 className="text-2xl md:text-3xl font-bold text-[#14213D] mb-1.5">28+ Subjects</h3>
+            <p className="text-[#4B5563] text-sm font-medium">Expertise Coverage</p>
+          </div>
+          
+          {/* Stat Item 3 */}
+          <div className="flex flex-col items-center md:items-start text-center md:text-left">
+            <h3 className="text-2xl md:text-3xl font-bold text-[#14213D] mb-1.5">100% Confidential</h3>
+            <p className="text-[#4B5563] text-sm font-medium">Student Protection</p>
+          </div>
         </div>
       </div>
     </section>
