@@ -5,7 +5,7 @@ import BlogPostsGridSection from '../components/blog/BlogPostsGridSection';
 
 const Blog = () => {
   return (
-    <div className="max-w-7xl mx-auto px-4 py-12 font-sans bg-white">
+    <div className="container mx-auto px-4 py-14 md:py-16 lg:py-20 bg-white">
 
       <BlogTopSection />
       <BlogDivider />
