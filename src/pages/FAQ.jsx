@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import useRevealAnimation from '../hooks/useRevealAnimation';
 
 const faqData = [
   {
@@ -41,6 +42,7 @@ const faqData = [
 
 const FAQ = () => {
   const [openIndex, setOpenIndex] = useState(0);
+  useRevealAnimation();
 
   const toggleAccordion = (index) => {
     setOpenIndex(openIndex === index ? null : index);
@@ -50,7 +52,7 @@ const FAQ = () => {
     <div className="w-full flex flex-col font-sans">
       {/* FAQ Section */}
       <div className="max-w-4xl mx-auto px-4 py-14 md:py-16 lg:py-20 w-full">
-        <div className="text-center mb-10">
+        <div className="text-center mb-10" data-reveal="text" style={{ '--reveal-delay': '40ms' }}>
           <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-[#1a202c] mb-4">
             Frequently Asked Questions
           </h2>
@@ -64,6 +66,8 @@ const FAQ = () => {
             <div 
               key={index} 
               className="bg-[#FFF0E6] rounded-sm overflow-hidden"
+              data-reveal="card"
+              style={{ '--reveal-delay': `${80 + index * 45}ms` }}
             >
               <button
                 onClick={() => toggleAccordion(index)}
@@ -72,7 +76,7 @@ const FAQ = () => {
                 <span className="text-black font-medium text-base">
                   {faq.question}
                 </span>
-                <span className="text-[#464E46] ml-4 transition-transform duration-200 flex-shrink-0">
+                <span className="text-[#464E46] ml-4 transition-transform duration-200 shrink-0">
                   {openIndex === index ? (
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
@@ -102,23 +106,25 @@ const FAQ = () => {
       {/* CTA Bottom Section */}
       <div 
         className="relative w-full py-24 bg-cover bg-center flex items-center justify-center"
+        data-reveal="card"
         style={{ 
+          '--reveal-delay': '120ms',
           // Replace this URL with your actual background image
-          backgroundImage: "url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')" 
+          backgroundImage: "url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')"
         }}
       >
         {/* Dark overlay */}
         <div className="absolute inset-0 bg-black/60"></div>
         
         {/* CTA Content */}
-        <div className="relative z-10 text-center px-4">
+        <div className="relative z-10 text-center px-4" data-reveal="text" style={{ '--reveal-delay': '180ms' }}>
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">
             Ready to Get Started?
           </h2>
           <p className="text-gray-200 text-sm md:text-base mb-8">
             Stop stressing over coursework. Let our experts handle it.
           </p>
-          <button className="bg-[#FF6B00] hover:bg-[#e56000] text-white font-medium py-3 px-8 rounded transition duration-300 shadow-lg">
+          <button className="bg-[#FF6B00] hover:bg-[#e56000] text-white font-medium py-3 px-8 rounded transition duration-300 shadow-lg hover:scale-105 transform">
             Get Help Now
           </button>
         </div>
