@@ -62,8 +62,8 @@ const GridCards = () => {
       <div className="container mx-auto px-4 ">
         {/* Changed layout to a standard grid to align items perfectly horizontally */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 items-stretch">
-          {cards.map((card) => (
-             <CardItem key={card.id} card={card} />
+          {cards.map((card, index) => (
+             <CardItem key={card.id} card={card} index={index} />
           ))}
         </div>
       </div>
@@ -72,9 +72,13 @@ const GridCards = () => {
 };
 
 // Reusable component
-const CardItem = ({ card }) => {
+const CardItem = ({ card, index }) => {
   return (
-    <article className={`h-full flex flex-col rounded-lg p-8 sm:p-10 ${card.bgColor} shadow-sm border border-slate-100 hover:shadow-lg transition-shadow duration-300`}>
+    <article
+      className={`h-full flex flex-col rounded-lg p-8 sm:p-10 ${card.bgColor} shadow-sm border border-slate-100 hover:shadow-lg transition-shadow duration-300`}
+      data-reveal="card"
+      style={{ '--reveal-delay': `${50 + index * 80}ms` }}
+    >
       {/* Icon with glowing shadow */}
       <div className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-6 ${card.iconBg} ${card.iconColor} ${card.iconShadow}`}>
         {card.icon}

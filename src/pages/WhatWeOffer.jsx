@@ -2,6 +2,7 @@ import React from "react";
 import WhatWeOfferHeader from "../components/whatweoffer/WhatWeOfferHeader";
 import GridCards from "../components/whatweoffer/GridCards";
 import CTASection from "../components/CTASection";
+import useRevealAnimation from "../hooks/useRevealAnimation";
 
 const OFFER_ITEMS = [
   { title: "Complete Online Class Help", subtitle: "Full Course Support" },
@@ -33,16 +34,20 @@ const GRID_CARDS = [
 ];
 
 const WhatWeOffer = () => {
+  useRevealAnimation();
+
   return (
     <div className="bg-white">
       <WhatWeOfferHeader offerItems={OFFER_ITEMS} />
       <GridCards gridCards={GRID_CARDS} />
-      <CTASection
-        title="Ready to Get Started?"
-        description="Stop stressing over coursework. Let our experts handle it."
-        buttonText="Get Help Now"
-        image="/cta.webp"
-      />
+      <div data-reveal="text" style={{ '--reveal-delay': '120ms' }}>
+        <CTASection
+          title="Ready to Get Started?"
+          description="Stop stressing over coursework. Let our experts handle it."
+          buttonText="Get Help Now"
+          image="/cta.webp"
+        />
+      </div>
     </div>
   );
 };

@@ -27,7 +27,11 @@ const WhatWeOfferHeader = () => {
         <div className="grid gap-12 lg:grid-cols-2">
           
           {/* Left Content */}
-          <div className="max-w-3xl pr-4 ">
+          <div
+            className="max-w-3xl pr-4 "
+            data-reveal="text"
+            style={{ '--reveal-delay': '40ms' }}
+          >
             <div className="inline-flex items-center gap-2 rounded-full bg-[#FFEDD4] px-3 py-1.5 text-sm font-medium text-primary mb-4">
               <span className="h-1.5 w-1.5 rounded-full bg-primary"></span>
               Academic Excellence
@@ -50,7 +54,11 @@ const WhatWeOfferHeader = () => {
           </div>
 
           {/* Right Content (Gradient Card) */}
-          <div className="relative w-full max-w-2xl justify-self-end ">
+          <div
+            className="relative w-full max-w-2xl justify-self-end "
+            data-reveal="card"
+            style={{ '--reveal-delay': '120ms' }}
+          >
             {/* Soft background glow shadow seen in the image */}
             <div className="absolute -inset-6 bg-primary blur-[80px] opacity-10 rounded-l z-0"></div>
 
@@ -64,6 +72,8 @@ const WhatWeOfferHeader = () => {
                   <div 
                     key={index} 
                     className="flex items-center gap-5 rounded-xl bg-[#2A3546] p-4 sm:p-5 hover:bg-[#323d4e] transition-colors"
+                    data-reveal="card"
+                    style={{ '--reveal-delay': `${160 + index * 70}ms` }}
                   >
                     {/* Orange Icon Container */}
                     <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-[#FF6B00] shadow-sm">

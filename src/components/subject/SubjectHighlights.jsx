@@ -51,6 +51,8 @@ const SubjectHighlights = () => {
           <div 
             key={idx} 
             className={`rounded-lg p-8 flex flex-col items-start transition-all duration-300 hover:-translate-y-1 hover:shadow-md ${card.bg}`}
+            data-reveal="card"
+            style={{ '--reveal-delay': `${60 + idx * 70}ms` }}
           >
             {/* Icon Container */}
             <div className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-6 ${card.iconBg}`}>

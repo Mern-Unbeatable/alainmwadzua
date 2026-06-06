@@ -29,8 +29,10 @@ import CTASection from '../components/CTASection';
 import SubjectHero from '../components/subject/SubjectHero';
 import SubjectHighlights from '../components/subject/SubjectHighlights';
 import SubjectsGrid from '../components/subject/SubjectsGrid';
+import useRevealAnimation from '../hooks/useRevealAnimation';
 
 const Subject = () => {
+  useRevealAnimation();
 
   // Highlights / Features underneath intro
   const highlights = [
@@ -103,7 +105,6 @@ const Subject = () => {
 
   return (
     <div className="w-full bg-white font-sans text-slate-800 antialiased">
-
       {/* SECTION 1: HERO INTRO AREA */}
       <SubjectHero
         titleMain={"Expert Tutors"}
@@ -122,8 +123,9 @@ const Subject = () => {
 
       <SubjectsGrid subjects={subjects} />
 
-     
-      <CTASection />
+      <div data-reveal="text" style={{ '--reveal-delay': '120ms' }}>
+        <CTASection />
+      </div>
 
     </div>
   );

@@ -46,7 +46,11 @@ const SubjectsGrid = () => {
     <section className="py-14 md:py-16 lg:py-20 bg-white">
       <div className="container mx-auto px-4 ">
         {/* Centered Header Section */}
-        <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16 space-y-3">
+        <div
+          className="text-center max-w-2xl mx-auto mb-12 sm:mb-16 space-y-3"
+          data-reveal="text"
+          style={{ '--reveal-delay': '40ms' }}
+        >
           <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">
             Subjects We Support
           </h2>
@@ -61,6 +65,8 @@ const SubjectsGrid = () => {
             <div 
               key={index} 
               className="bg-white border border-[#E3BFB133] rounded-2xl p-5 hover:border-orange-200 hover:shadow-md transition-all duration-300 group cursor-pointer flex flex-col"
+              data-reveal="card"
+              style={{ '--reveal-delay': `${70 + index * 30}ms` }}
             >
               <div className="text-slate-700 mb-3">
                 {subj.icon}

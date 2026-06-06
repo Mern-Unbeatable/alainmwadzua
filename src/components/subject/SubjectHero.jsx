@@ -37,7 +37,11 @@ const SubjectHero = ({ image }) => {
       <div className="container mx-auto px-4 ">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           {/* Left Content */}
-          <div className="lg:col-span-5 flex flex-col justify-center">
+          <div
+            className="lg:col-span-5 flex flex-col justify-center"
+            data-reveal="text"
+            style={{ '--reveal-delay': '40ms' }}
+          >
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#111827] ">
               Expert Tutors <br className="hidden sm:block" />
               Across <span className="text-primary">All Major</span>{" "}
@@ -76,7 +80,11 @@ const SubjectHero = ({ image }) => {
           </div>
 
           {/* Right Content / Image */}
-          <div className="lg:col-span-7 relative">
+          <div
+            className="lg:col-span-7 relative"
+            data-reveal="card"
+            style={{ '--reveal-delay': '120ms' }}
+          >
             {/* Soft Orange Glow behind the top right of the image */}
             <div className="absolute -top-16 -right-16 w-80 h-80 bg-primary/20 blur-[100px] rounded-full z-0 pointer-events-none"></div>
 
