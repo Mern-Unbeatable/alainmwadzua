@@ -1,7 +1,8 @@
 import React from 'react';
 import { 
   FileQuestion, DollarSign, Medal, ShieldCheck, 
-  Clock, Eye, Star, Lock, Globe, Zap 
+  Clock, Eye, Star, Lock, Globe, Zap, 
+  Tag
 } from 'lucide-react';
 
 const TrustSidebar = () => {
@@ -20,19 +21,19 @@ const TrustSidebar = () => {
   return (
     <div className="space-y-6">
       {/* Support Alert Box */}
-      <div className="bg-[#fff8f3] rounded-2xl p-6 relative overflow-hidden">
+      <div className="bg-gradient-to-r from-[#FFF5E6] to-[#FFE0B3] rounded-2xl p-6 relative overflow-hidden">
         {/* Decorative heart watermark background like the image */}
         <div className="absolute -right-4 -top-4 opacity-10">
-            <ShieldCheck className="w-24 h-24 text-[#ff6b00]" />
+            <Tag className="w-24 h-24 text-[#191C1E]" />
         </div>
         
         <div className="flex gap-4 relative z-10">
-          <div className="p-2.5 bg-[#ff6b00] rounded-xl text-white shrink-0 h-fit">
+          <div className="p-2.5 bg-primary rounded-xl text-white shrink-0 h-fit">
             <FileQuestion className="w-5 h-5" />
           </div>
           <div>
-            <h4 className="font-medium text-gray-800 text-[15px] mb-1">Need help with an online class?</h4>
-            <p className="text-[13px] text-gray-600 leading-relaxed">
+            <h4 className="font-medium text-[#561D00] text-lg mb-1">Need help with an online class?</h4>
+            <p className="text-base text-gray-600 leading-relaxed">
               Our support team is available 7 days a week to review your needs and provide a custom quote.
             </p>
           </div>
@@ -40,8 +41,8 @@ const TrustSidebar = () => {
       </div>
 
       {/* Trust List */}
-      <div className="bg-white border border-gray-100 rounded-2xl p-6 shadow-[0_2px_15px_rgb(0,0,0,0.03)]">
-        <h3 className="text-[13px] font-bold tracking-widest text-gray-800 uppercase border-b border-gray-100 pb-4 mb-5">
+      <div className="bg-white border border-[#E3BFB1] rounded-2xl p-6 shadow-[0_2px_15px_rgb(0,0,0,0.03)]">
+        <h3 className="text-lg font-bold tracking-widest text-gray-800 uppercase border-b border-[#E3BFB1] pb-4 mb-5">
           WHY STUDENTS TRUST US
         </h3>
         <ul className="space-y-4">
@@ -50,7 +51,7 @@ const TrustSidebar = () => {
               <div className={`w-8 h-8 rounded-full ${point.bg} flex items-center justify-center shrink-0`}>
                 {point.icon}
               </div>
-              <span className="text-[14px] text-gray-700">{point.text}</span>
+              <span className="text-base text-gray-700">{point.text}</span>
             </li>
           ))}
         </ul>
