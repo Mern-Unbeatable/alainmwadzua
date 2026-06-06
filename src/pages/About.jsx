@@ -15,7 +15,8 @@ const About = () => {
       <AboutStorySection />
       <AboutFeaturesSection />
       <StudentPromiseSection />
-      <CTASection/>
+      <CTASection title='Our Company Goal' description='Our goal is to help busy students get reliable, confidential online class help
+so they can save time, reduce stress, and achieve better grades.' buttonText='Partner With Us Today'/>
     </div>
   );
 };
