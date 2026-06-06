@@ -73,7 +73,7 @@ const WhyChooseSection = memo(() => {
     <section className="py-14 sm:py-16 lg:py-20 bg-[#FAFAFA]">
       <div className="container mx-auto px-4 l">
         <div className="max-w-3xl mb-14 sm:mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-[#222222] to-[#FF6600] bg-clip-text text-transparent">
+          <h2 className="text-3xl sm:text-4xl font-bold bg-linear-to-r from-[#222222] to-primary bg-clip-text text-transparent">
             Why Choose <span>Online Class Writers?</span>
           </h2>
           <p className="mt-4 max-w-2xl text-sm sm:text-base leading-relaxed text-slate-600">
@@ -83,10 +83,12 @@ const WhyChooseSection = memo(() => {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-14 sm:gap-y-16">
-          {BENEFITS.map(({ title, description, icon: Icon }) => (
+          {BENEFITS.map(({ title, description, icon: Icon }, idx) => (
             <article
               key={title}
               className="relative rounded-lg border border-slate-100 bg-white px-6 pb-8 pt-12 text-center shadow-[0_4px_20px_rgba(0,0,0,0.03)]"
+              data-reveal="card"
+              style={{ "--reveal-delay": `${100 + idx * 65}ms` }}
             >
               <div className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2">
                 <div className="relative flex h-16 w-16 items-center justify-center">

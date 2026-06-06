@@ -22,8 +22,13 @@ const ServicesSection = memo(() => {
         </div>
 
         <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {SERVICES.map(({ title, icon: Icon }) => (
-            <div key={title} className="rounded-lg border border-[#FFD0B0] bg-[#FFF0E6] p-6 text-center">
+          {SERVICES.map(({ title, icon: Icon }, idx) => (
+            <div
+              key={title}
+              className="rounded-lg border border-[#FFD0B0] bg-[#FFF0E6] p-6 text-center"
+              data-reveal="card"
+              style={{ "--reveal-delay": `${80 + idx * 60}ms` }}
+            >
               <div className="mx-auto inline-flex h-12 w-12 items-center justify-center rounded-full bg-primary text-white">
                 <Icon size={20} />
               </div>

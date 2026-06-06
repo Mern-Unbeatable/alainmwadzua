@@ -46,7 +46,11 @@ const AboutFeaturesSection = () => {
   return (
     <section className=" py-14 md:py-16 lg:py-20">
       <div className="container mx-auto px-4">
-        <div className="text-center max-w-4xl mx-auto mb-10">
+        <div
+          className="text-center max-w-4xl mx-auto mb-10"
+          data-reveal="text"
+          style={{ "--reveal-delay": "40ms" }}
+        >
           <h2 className="text-4xl font-semibold text-black mb-4">
             What makes Online Class Writers different?
           </h2>
@@ -57,7 +61,12 @@ const AboutFeaturesSection = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {features.map((feature, idx) => (
-            <div key={idx} className="bg-white rounded-xl p-6 border border-[#00000033] shadow-sm hover:shadow-md transition-shadow">
+            <div
+              key={idx}
+              className="bg-white rounded-xl p-6 border border-[#00000033] shadow-sm hover:shadow-md transition-shadow"
+              data-reveal="card"
+              style={{ "--reveal-delay": `${80 + idx * 70}ms` }}
+            >
               <div className="w-10 h-10 rounded bg-[#FFF0E6] flex items-center justify-center mb-5">
                 {feature.icon}
               </div>
