@@ -8,7 +8,7 @@ const AboutStorySection = () => {
         
         {/* Left Side: Text Content */}
         <div className="pr-0 lg:pr-2">
-          <h2 className="text-4xl font-bold text-black mb-6">Our Story</h2>
+          <h2 className="text-4xl font-semibold text-black mb-6">Our Story</h2>
           <div className="space-y-4 text-[#5A4136] text-base ">
             <p>
               Founded on the belief that education should be empowering, not overwhelming, Online Class Writers emerged as a beacon for students juggling the impossible. We understand that your academic journey is often complicated by professional responsibilities, family commitments, and the relentless pressure of modern university life.

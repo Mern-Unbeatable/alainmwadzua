@@ -1,38 +1,3 @@
-// import React from "react";
-
-// const DEFAULT_TITLE = "Ready to Get Started?";
-// const DEFAULT_DESCRIPTION = "Stop stressing over coursework. Let our experts handle it.";
-// const DEFAULT_BUTTON_TEXT = "Get Help Now";
-
-// const CTASection = ({
-
-// }) => {
-//   const sectionStyle = image
-//     ? { backgroundImage: `linear-gradient(rgba(15, 28, 63, 0.68), rgba(15, 28, 63, 0.68)), url(${image})` }
-//     : undefined;
-
-//   return (
-//     <section
-//       className={`py-16 ${image ? "bg-cover bg-center bg-no-repeat" : "bg-linear-to-r from-white via-orange-50 to-white"}`}
-//       style={sectionStyle}
-//     >
-//       <div className="container mx-auto px-4">
-//         <div className={`rounded-xl p-10 text-center shadow-lg ${image ? "bg-transparent text-white" : "bg-white/95"}`}>
-//           <h2 className={`text-3xl font-semibold ${image ? "text-white" : "text-slate-900"}`}>{title}</h2>
-//           <p className={`mt-2 ${image ? "text-white/85" : "text-slate-600"}`}>{description}</p>
-//           <button className="mt-6 inline-flex items-center gap-2 rounded-md bg-primary px-5 py-3 text-sm font-semibold text-white">
-//             {buttonText}
-//           </button>
-//         </div>
-//       </div>
-//     </section>
-//   );
-// };
-
-// export default CTASection;
-
-
-
 
 
 import React from "react";

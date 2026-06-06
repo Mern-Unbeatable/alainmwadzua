@@ -3,7 +3,9 @@ import AboutHeroSection from '../components/about/AboutHeroSection';
 import AboutStorySection from '../components/about/AboutStorySection';
 import AboutFeaturesSection from '../components/about/AboutFeaturesSection';
 import StudentPromiseSection from '../components/about/StudentPromiseSection';
-import CompanyGoalSection from '../components/about/CompanyGoalSection';
+import { Cat } from 'lucide-react';
+import CTASection from '../components/CTASection';
+
 
 const About = () => {
   return (
@@ -13,7 +15,7 @@ const About = () => {
       <AboutStorySection />
       <AboutFeaturesSection />
       <StudentPromiseSection />
-      <CompanyGoalSection />
+      <CTASection/>
     </div>
   );
 };

@@ -2,7 +2,7 @@ import React from 'react';
 
 const StudentPromiseSection = () => {
   return (
-    <section className="max-w-5xl mx-auto px-4 py-16">
+    <section className="max-w-5xl mx-auto px-4 pb-14 md:pb-16 lg:pb-20 border">
       <div className="bg-[#FF6B00] rounded-2xl p-10 md:p-16 text-center shadow-lg">
         <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
           The Student Promise
