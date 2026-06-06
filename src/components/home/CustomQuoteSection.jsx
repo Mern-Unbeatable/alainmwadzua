@@ -44,12 +44,12 @@ const CustomQuoteSection = memo(() => {
               onClick={handleBack}
               className="absolute left-5 top-6 sm:left-8 sm:top-7 flex items-center gap-1 text-sm font-medium text-slate-500 hover:text-slate-800 transition-colors"
             >
-              <ChevronLeft className="w-4 h-4" />
+              <ChevronLeft className="w-4 h-4"  />
               Back
             </button>
           )}
 
-          <div>
+          <div className={step > 1 ? "pt-8 sm:pt-0" : ""}>
             <div className="text-center mt-2 sm:mt-0">
               <h2 className="text-2xl sm:text-3xl font-semibold text-slate-800">
                 Get Your Free Custom Quote
@@ -76,7 +76,7 @@ const CustomQuoteSection = memo(() => {
               )}
 
               {step === 2 && (
-                <div className="flex flex-wrap items-center justify-center gap-2.5 max-w-2xl">
+                <div className="flex flex-wrap items-center justify-center gap-2.5 max-w-2xl mt-2 pt-4">
                   {DEADLINES.map((time) => (
                     <button
                       key={time}
