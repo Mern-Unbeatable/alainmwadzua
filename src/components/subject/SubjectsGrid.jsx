@@ -72,11 +72,11 @@ const SubjectsGrid = () => {
                 {subj.icon}
               </div>
               
-              <h3 className="font-medium text-[15px] text-slate-800 tracking-tight mb-3">
+              <h3 className="font-medium text-lg text-slate-800 tracking-tight mb-3">
                 {subj.name}
               </h3>
               
-              <div className="mt-auto text-[11px] font-bold text-[#FF6B00] uppercase tracking-wide flex items-center gap-1.5 opacity-90 group-hover:opacity-100">
+              <div className="mt-auto text-sm font-bold text-[#FF6B00] uppercase tracking-wide flex items-center gap-1.5 opacity-90 group-hover:opacity-100">
                 Get Help 
                 <ArrowRight size={14} className="transform group-hover:translate-x-0.5 transition-transform" />
               </div>
