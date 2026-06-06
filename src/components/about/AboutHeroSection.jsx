@@ -2,7 +2,7 @@ import React from 'react';
 
 const AboutHeroSection = () => {
   return (
-    <section className="relative w-full h-[500px] flex items-center justify-center mb-24">
+    <section className="relative w-full h-[500px] flex items-center justify-center mb-14 md:mb-16 lg:mb-20">
       {/* Background Image & Dark Overlay */}
       <div
         className="absolute inset-0 bg-cover bg-center"
@@ -32,7 +32,7 @@ const AboutHeroSection = () => {
       </div>
 
       {/* Overlapping Bottom Stats Card */}
-      <div className="absolute -bottom-16 left-1/2 -translate-x-1/2 w-[90%] max-w-5xl bg-[#FFF6ED] rounded-xl shadow-xl py-10 px-8 z-20">
+      <div className="absolute -bottom-16 left-1/2 -translate-x-1/2 w-[90%] max-w-5xl bg-[#FFF0E6] rounded-xl shadow-xl py-10 px-8 z-20">
         <div className="flex flex-col md:flex-row justify-around items-center md:items-start gap-8">
           {/* Stat Item 1 */}
           <div className="flex flex-col items-center md:items-start text-center md:text-left">

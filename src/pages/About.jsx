@@ -7,7 +7,7 @@ import CompanyGoalSection from '../components/about/CompanyGoalSection';
 
 const About = () => {
   return (
-    <div className="w-full font-sans bg-white">
+    <div className="w-full bg-white">
 
       <AboutHeroSection />
       <AboutStorySection />
