@@ -16,7 +16,7 @@ const CTASection = ({   title = DEFAULT_TITLE,
 
   return (
     <section
-      className="relative flex items-center justify-center py-16 md:py-20  bg-cover bg-center bg-no-repeat"
+      className="relative flex items-center justify-center py-16 md:py-20 lg:py-26  bg-cover bg-center bg-no-repeat"
       style={{
         // Applied the exact #00000099 overlay color over the image
         backgroundImage: `linear-gradient(#00000099, #00000099), url(${bgImage})`
