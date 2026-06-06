@@ -5,16 +5,16 @@ import { GraduationCap, Linkedin, Youtube } from "lucide-react";
 
 const QUICK_LINKS = [
   { label: "Home", to: ROUTES.HOME },
-  { label: "How It Works", to: ROUTES.SERVICES },
+  { label: "What We Offer", to: ROUTES.WHAT_WE_OFFER },
   { label: "About", to: ROUTES.ABOUT },
-  { label: "Subjects", to: ROUTES.SERVICES },
-  { label: "Pricing", to: ROUTES.SERVICES },
+  { label: "Subjects", to: ROUTES.SUBJECTS },
+  { label: "Pricing", to: ROUTES.PRICING },
 ];
 
 const RESOURCE_LINKS = [
-  { label: "FAQ", to: ROUTES.CONTACT },
+  { label: "FAQ", to: ROUTES.FAQ },
   { label: "Contact", to: ROUTES.CONTACT },
-  { label: "Terms & Conditions", to: ROUTES.CONTACT },
+  { label: "Blog", to: ROUTES.BLOG },
 ];
 
 const Footer = memo(() => {
