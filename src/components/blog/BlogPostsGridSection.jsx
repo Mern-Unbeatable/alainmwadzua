@@ -31,7 +31,7 @@ const BlogPostsGridSection = () => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       {gridPosts.map((post) => (
-        <div key={post.id} className="bg-[#FAF8F4] rounded-3xl overflow-hidden flex flex-col group cursor-pointer shadow-sm hover:shadow-md transition-shadow">
+        <div key={post.id} className="bg-[#F8F5F0] rounded-3xl overflow-hidden flex flex-col group cursor-pointer shadow-sm hover:shadow-md transition-shadow">
           <div className="w-full h-56 overflow-hidden">
             <img
               src={post.imageUrl}
@@ -41,20 +41,20 @@ const BlogPostsGridSection = () => {
           </div>
 
           <div className="p-6 flex flex-col grow">
-            <h3 className="text-xl font-bold text-[#1a2b4c] mb-3 leading-snug group-hover:text-[#FF6B00] transition-colors">
+            <h3 className="text-xl font-semibold text-[#1a2b4c] mb-3 leading-snug group-hover:text-primary transition-colors">
               {post.title}
             </h3>
-            <p className="text-gray-600 text-sm leading-relaxed mb-6 grow">
+            <p className="text-gray-600 text-base leading-relaxed mb-6 grow">
               {post.excerpt}
             </p>
 
             <div className="flex justify-between items-center mt-auto">
-              <div className="flex items-center text-gray-500 text-xs font-medium">
+              <div className="flex items-center text-gray-500 text-sm font-medium">
                 <span>{post.date}</span>
                 <span className="mx-1.5">•</span>
                 <span>{post.readTime}</span>
               </div>
-              <button className="text-[#FF6B00] text-sm font-semibold flex items-center gap-1 hover:underline">
+              <button className="text-primary text-sm font-semibold flex items-center gap-1 hover:underline">
                 Read More
                 <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
