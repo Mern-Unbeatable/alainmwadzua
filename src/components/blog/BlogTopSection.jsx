@@ -127,13 +127,17 @@ const latestPosts = [
 const BlogTopSection = () => {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
-      <div className="lg:col-span-2 relative rounded-3xl overflow-hidden shadow-lg h-[400px] lg:h-full group cursor-pointer">
+      <div
+        className="lg:col-span-2 relative rounded-3xl overflow-hidden shadow-lg h-100 lg:h-full group cursor-pointer"
+        data-reveal="card"
+        style={{ '--reveal-delay': '40ms' }}
+      >
         <img
           src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
           alt="Students studying"
           className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
+        <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/30 to-transparent"></div>
 
         <div className="absolute bottom-0 left-0 p-6 md:p-10 w-full">
           <h1 className="text-white text-3xl md:text-4xl font-medium mb-4 leading-tight">
@@ -148,11 +152,20 @@ const BlogTopSection = () => {
       </div>
 
       {/* Right Column - Dictates the overall height on Desktop */}
-      <div className="flex flex-col h-full justify-between">
+      <div
+        className="flex flex-col h-full justify-between"
+        data-reveal="text"
+        style={{ '--reveal-delay': '100ms' }}
+      >
         <h2 className="text-2xl font-bold text-[#1a2b4c] mb-6">Latest post</h2>
         <div className="flex flex-col gap-6">
           {latestPosts.map((post) => (
-            <div key={post.id} className="flex items-center gap-4 group cursor-pointer">
+            <div
+              key={post.id}
+              className="flex items-center gap-4 group cursor-pointer"
+              data-reveal="card"
+              style={{ '--reveal-delay': `${140 + post.id * 55}ms` }}
+            >
               <div className="w-24 h-24 shrink-0 overflow-hidden rounded-xl">
                 <img
                   src={post.imageUrl}

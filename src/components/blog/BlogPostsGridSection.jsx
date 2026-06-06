@@ -30,8 +30,13 @@ const gridPosts = [
 const BlogPostsGridSection = () => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {gridPosts.map((post) => (
-        <div key={post.id} className="bg-[#F8F5F0] rounded-3xl overflow-hidden flex flex-col group cursor-pointer shadow-sm hover:shadow-md transition-shadow">
+      {gridPosts.map((post, index) => (
+        <div
+          key={post.id}
+          className="bg-[#F8F5F0] rounded-3xl overflow-hidden flex flex-col group cursor-pointer shadow-sm hover:shadow-md transition-shadow"
+          data-reveal="card"
+          style={{ '--reveal-delay': `${70 + index * 80}ms` }}
+        >
           <div className="w-full h-56 overflow-hidden">
             <img
               src={post.imageUrl}
