@@ -70,3 +70,13 @@ button {
     transition: none;
   }
 }
+
+.blog-detail-hero-image {
+  height: 260px;
+}
+
+@media (min-width: 768px) {
+  .blog-detail-hero-image {
+    height: 380px;
+  }
+}

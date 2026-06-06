@@ -12,6 +12,7 @@ export const ROUTES = {
   PRICING: '/pricing',
   FAQ: '/faq',
   BLOG: '/blog',
+  BLOG_DETAIL: '/blog/:slug',
   CONTACT: '/contact',
 };
 
