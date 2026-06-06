@@ -21,16 +21,16 @@ const FeatureGrid = () => {
   ];
 
   return (
-    <div className="bg-[#f8fafc] py-16 px-4">
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
+    <div className="bg-[#F9F9F9] py-14 md:py-16 lg:py-20 ">
+      <div className="container px-4 mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
         {features.map((item, index) => (
           <div key={index} className="flex flex-col sm:flex-row gap-4">
-            <div className="w-12 h-12 rounded-full bg-indigo-100 flex items-center justify-center shrink-0">
+            <div className="w-12 h-12 rounded-full bg-[#C4D0FD] flex items-center justify-center shrink-0">
               {item.icon}
             </div>
             <div>
-              <h3 className="font-bold text-gray-900 text-[16px] mb-2">{item.title}</h3>
-              <p className="text-[13px] text-gray-500 leading-relaxed">{item.desc}</p>
+              <h3 className="font-semibold text-gray-900 text-lg mb-2">{item.title}</h3>
+              <p className="text-base text-gray-500 leading-relaxed">{item.desc}</p>
             </div>
           </div>
         ))}

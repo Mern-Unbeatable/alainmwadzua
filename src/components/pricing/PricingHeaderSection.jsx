@@ -2,11 +2,11 @@ import React from 'react';
 
 const PricingHeaderSection = () => {
   return (
-    <header className="text-center pt-20 pb-12 px-4 max-w-4xl mx-auto">
-      <h1 className="text-3xl md:text-[42px] font-extrabold text-gray-900 mb-4 tracking-tight">
+    <header className="text-center pt-14 md:pt-16 lg:pt-20 pb-10 px-4 max-w-4xl mx-auto">
+      <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 tracking-tight">
         Get a Fast, Personalized Quote
       </h1>
-      <p className="text-gray-500 text-[15px] max-w-2xl mx-auto">
+      <p className="text-gray-500 text-base max-w-2xl mx-auto">
         Every assignment is unique. We provide custom pricing to ensure you get the best value for your specific academic needs.
       </p>
     </header>
