@@ -1,6 +1,8 @@
 import React from 'react';
 import { useSEO } from '../hooks/useSEO';
-import useRevealAnimation from '../hooks/useRevealAnimation';
+import { Link } from 'react-router-dom';
+import { ROUTES } from '../config';
+
 
 const TERMS_SECTIONS = [
   {
@@ -30,7 +32,6 @@ const TERMS_SECTIONS = [
 ];
 
 const TermsConditions = () => {
-  useRevealAnimation();
 
   useSEO({
     title: 'Terms & Conditions | Online Class Writers',
@@ -40,8 +41,8 @@ const TermsConditions = () => {
   });
 
   return (
-    <div className="container mx-auto px-4 py-14 md:py-16 lg:py-20 bg-white">
-      <div className="max-w-4xl mx-auto" data-reveal="text" style={{ '--reveal-delay': '60ms' }}>
+    <div className=" py-14 md:py-16 lg:py-20 bg-white">
+      <div className="container mx-auto px-4">
         <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#1a202c] mb-5">
           Terms & Conditions
         </h1>
@@ -67,7 +68,11 @@ const TermsConditions = () => {
         </div>
 
         <p className="mt-10 text-base md:text-lg text-[#2d3748]" data-reveal="text" style={{ '--reveal-delay': '320ms' }}>
-          If you have any questions about these Terms and Conditions, please contact us.
+          If you have any questions about these Terms and Conditions, please{' '}
+          <Link to={ROUTES.CONTACT} className="text-primary font-medium hover:underline">
+            contact us
+          </Link>
+          .
         </p>
       </div>
     </div>
