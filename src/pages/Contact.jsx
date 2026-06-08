@@ -57,8 +57,6 @@ const Contact = () => {
   const [formData, setFormData] = useState(initialFormData);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  useRevealAnimation();
-
   const handleFieldChange = (event) => {
     const { name, value } = event.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
@@ -132,7 +130,7 @@ const Contact = () => {
           <ContactDetailsFields formData={formData} onFieldChange={handleFieldChange} />
 
           {/* Submit Button */}
-          <div className="flex justify-end pt-2" data-reveal="text" style={{ '--reveal-delay': '230ms' }}>
+          <div className="flex justify-end pt-2" >
             <button
               type="submit"
               className="bg-primary hover:bg-[#e56000] disabled:opacity-60 disabled:cursor-not-allowed text-white font-medium py-3 px-8 rounded transition duration-300 shadow-sm"
