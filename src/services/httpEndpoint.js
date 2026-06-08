@@ -22,6 +22,10 @@ export const API_ENDPOINTS = {
     SEND: '/contact',
   },
 
+  QUOTES: {
+    CREATE: '/api/v1/quotes',
+  },
+
   SERVICES: {
     LIST: '/services',
     BY_ID: (id) => `/services/${id}`,

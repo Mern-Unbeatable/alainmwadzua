@@ -3,7 +3,7 @@ import React from 'react';
 const inputClassName =
   'w-full border border-gray-300 rounded-md p-3 text-sm focus:outline-none focus:ring-1 focus:ring-[#FF6B00] focus:border-[#FF6B00]';
 
-const ContactDetailsFields = () => {
+const ContactDetailsFields = ({ formData, onFieldChange }) => {
   return (
     <>
       <div data-reveal="text" style={{ '--reveal-delay': '150ms' }}>
@@ -15,8 +15,12 @@ const ContactDetailsFields = () => {
           <input
             type="text"
             id="courseInfo"
+            name="subject"
             placeholder="e.g. ECON 101 - Intro to Microeconomics"
             className={inputClassName}
+            value={formData.subject}
+            onChange={onFieldChange}
+            required
           />
         </div>
       </div>
@@ -32,8 +36,12 @@ const ContactDetailsFields = () => {
             <input
               type="text"
               id="fullName"
+              name="name"
               placeholder="John Doe"
               className={inputClassName}
+              value={formData.name}
+              onChange={onFieldChange}
+              required
             />
           </div>
           <div className="flex flex-col">
@@ -43,8 +51,12 @@ const ContactDetailsFields = () => {
             <input
               type="email"
               id="emailAddress"
+              name="email"
               placeholder="john@example.com"
               className={inputClassName}
+              value={formData.email}
+              onChange={onFieldChange}
+              required
             />
           </div>
         </div>
@@ -56,8 +68,11 @@ const ContactDetailsFields = () => {
           <input
             type="tel"
             id="phoneNumber"
+            name="phoneNumber"
             placeholder="+1 (555) 000-0000"
             className={inputClassName}
+            value={formData.phoneNumber}
+            onChange={onFieldChange}
           />
         </div>
 
@@ -67,9 +82,13 @@ const ContactDetailsFields = () => {
           </label>
           <textarea
             id="message"
+            name="message"
             rows="4"
             placeholder="Please let us know any specific details about your project or course requirements..."
             className={`${inputClassName} resize-y`}
+            value={formData.message}
+            onChange={onFieldChange}
+            required
           ></textarea>
         </div>
       </div>

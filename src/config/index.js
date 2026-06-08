@@ -18,7 +18,7 @@ export const ROUTES = {
 };
 
 export const API_CONFIG = {
-  BASE_URL: '',
+  BASE_URL: (typeof __API_BASE_URL__ !== 'undefined' && __API_BASE_URL__) || '',
   VITALS_ENDPOINT: '',
   TIMEOUT: 10000,
   RETRY_ATTEMPTS: 3,

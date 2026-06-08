@@ -1,4 +1,6 @@
 const path = require('path');
+const webpack = require('webpack');
+require('dotenv').config();
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = (env, argv) => {
@@ -41,6 +43,9 @@ module.exports = (env, argv) => {
       extensions: ['.js', '.jsx'],
     },
     plugins: [
+      new webpack.DefinePlugin({
+        __API_BASE_URL__: JSON.stringify(process.env.API_BASE_URL || ''),
+      }),
       new HtmlWebpackPlugin({
         template: './public/index.html',
         filename: 'index.html',
@@ -94,7 +99,7 @@ module.exports = (env, argv) => {
       // Proxy /api/* → backend so browser never sees a CORS error in dev
       proxy: {
         '/api': {
-          target: 'http://localhost:8000',
+          target: process.env.API_BASE_URL || 'http://localhost:8000',
           changeOrigin: true,
           secure: false,
         },
