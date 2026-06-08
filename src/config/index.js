@@ -14,6 +14,7 @@ export const ROUTES = {
   BLOG: '/blog',
   BLOG_DETAIL: '/blog/:slug',
   CONTACT: '/contact',
+  TERMS_CONDITIONS: '/terms-and-conditions',
 };
 
 export const API_CONFIG = {

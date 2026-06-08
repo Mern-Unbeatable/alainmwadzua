@@ -15,6 +15,7 @@ const RESOURCE_LINKS = [
   { label: "FAQ", to: ROUTES.FAQ },
   { label: "Contact", to: ROUTES.CONTACT },
   { label: "Blog", to: ROUTES.BLOG },
+  { label: "Terms & Conditions", to: ROUTES.TERMS_CONDITIONS },
 ];
 
 const Footer = memo(() => {
