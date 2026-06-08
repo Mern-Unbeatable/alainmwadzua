@@ -67,7 +67,7 @@ const OnlineHelpCtaSection = memo(() => {
       subject: formData.subject.trim(),
       name: formData.name.trim(),
       email: formData.email.trim(),
-      phoneNumber: formData.phoneNumber.trim(),
+      ...(formData.phoneNumber.trim() && { phoneNumber: formData.phoneNumber.trim() }),
       message: formData.message.trim(),
     };
 
