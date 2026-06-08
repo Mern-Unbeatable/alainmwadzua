@@ -32,27 +32,20 @@ const HomeContent = memo(() => {
   return (
     <>
       <HeroSection />
-      <div data-reveal="text" style={{ "--reveal-delay": "40ms" }}>
-        <CustomQuoteSection />
-      </div>
-      <div data-reveal="text" style={{ "--reveal-delay": "90ms" }}>
-        <HowItWorksSection />
-      </div>
-      <div data-reveal="text" style={{ "--reveal-delay": "120ms" }}>
-        <WhyChooseSection />
-      </div>
-      <div data-reveal="card" style={{ "--reveal-delay": "150ms" }}>
-        <OnlineHelpCtaSection />
-      </div>
-      <div data-reveal="text" style={{ "--reveal-delay": "180ms" }}>
-        <ServicesSection />
-      </div>
-      <div data-reveal="text" style={{ "--reveal-delay": "220ms" }}>
-        <ExpertTutorsSection />
-      </div>
-      <div data-reveal="card" style={{ "--reveal-delay": "250ms" }}>
-        <DisclaimerSection />
-      </div>
+
+      <CustomQuoteSection />
+
+      <HowItWorksSection />
+
+      <WhyChooseSection />
+
+      <OnlineHelpCtaSection />
+
+      <ServicesSection />
+
+      <ExpertTutorsSection />
+
+      <DisclaimerSection />
     </>
   );
 });
