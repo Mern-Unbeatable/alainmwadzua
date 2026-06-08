@@ -4,7 +4,7 @@ import ContactHeroSection from '../components/contact/ContactHeroSection';
 import SelectionChips from '../components/contact/SelectionChips';
 import ContactDetailsFields from '../components/contact/ContactDetailsFields';
 import GuaranteesSection from '../components/contact/GuaranteesSection';
-import useRevealAnimation from '../hooks/useRevealAnimation';
+
 import { postQuoteRequest } from '../services/quoteService';
 
 const services = [
@@ -83,8 +83,7 @@ const Contact = () => {
         icon: 'success',
         title: 'Submitted',
         text:
-          response?.message ||
-          'Q',
+          response?.message,
         confirmButtonColor: '#FF6B00',
       });
 
