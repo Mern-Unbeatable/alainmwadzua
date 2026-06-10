@@ -40,7 +40,7 @@ const About = () => {
       </div>
       <div data-reveal="text" style={{ "--reveal-delay": "150ms" }}>
         <CTASection
-          title="Our Company Goal"
+          title="Get Help"
           description="Our goal is to help busy students get reliable, confidential online class help
 so they can save time, reduce stress, and achieve better grades."
           buttonText="Partner With Us Today"

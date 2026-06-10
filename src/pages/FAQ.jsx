@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import useRevealAnimation from '../hooks/useRevealAnimation';
+import { ROUTES } from '../config';
 
 const faqData = [
   {
@@ -124,9 +126,12 @@ const FAQ = () => {
           <p className="text-gray-200 text-sm md:text-base mb-8">
             Stop stressing over coursework. Let our experts handle it.
           </p>
-          <button className="bg-[#FF6B00] hover:bg-[#e56000] text-white font-medium py-3 px-8 rounded transition duration-300 shadow-lg hover:scale-105 transform">
+          <Link
+            to={ROUTES.CONTACT}
+            className="bg-[#FF6B00] hover:bg-[#e56000] text-white font-medium py-3 px-8 rounded transition duration-300 shadow-lg hover:scale-105 transform inline-block"
+          >
             Get Help Now
-          </button>
+          </Link>
         </div>
       </div>
     </div>

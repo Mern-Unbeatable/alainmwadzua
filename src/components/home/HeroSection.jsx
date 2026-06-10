@@ -125,6 +125,13 @@ const HERO_RIGHT_IMAGE = "/heroRight.webp";
 const HERO_MOBILE_IMAGE = "/mobileHero.png";
 
 const HeroSection = memo(() => {
+  const handleScrollToCta = () => {
+    const element = document.getElementById("online-help-cta");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <section className="relative isolate overflow-hidden pt-0 lg:pt-32">
       <div
@@ -168,6 +175,7 @@ const HeroSection = memo(() => {
             <div className="mt-6 lg:mt-8 flex flex-col sm:flex-row flex-wrap items-center gap-3">
               <button
                 type="button"
+                onClick={handleScrollToCta}
                 className="w-full sm:w-auto justify-center inline-flex items-center gap-2 rounded-md bg-[#FF6B00] lg:bg-primary px-5 py-3.5 lg:py-3 text-[15px] lg:text-sm font-semibold text-white transition-colors hover:opacity-90"
               >
                 Get Help Now
@@ -175,6 +183,7 @@ const HeroSection = memo(() => {
               </button>
               <button
                 type="button"
+                onClick={handleScrollToCta}
                 className="w-full sm:w-auto justify-center inline-flex items-center gap-2 rounded-md bg-[#1a2b4c] lg:bg-slate-800 px-5 py-3.5 lg:py-3 text-[15px] lg:text-sm font-semibold text-white transition-colors hover:bg-slate-700"
               >
                 Request a free quote

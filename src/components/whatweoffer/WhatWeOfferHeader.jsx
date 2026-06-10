@@ -1,5 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { ArrowRight, BookOpen, ClipboardList, FileText } from "lucide-react";
+import { ROUTES } from "../../config";
 
 const WhatWeOfferHeader = () => {
   // Define the items internally with their specific icons to match the design
@@ -47,10 +49,13 @@ const WhatWeOfferHeader = () => {
               lot more than you might think!
             </p>
             
-            <button className="inline-flex items-center gap-2 rounded-md bg-primary hover:bg-primary transition-colors px-6 py-3.5 text-sm  text-white shadow-md">
+            <Link
+              to={ROUTES.CONTACT}
+              className="inline-flex items-center gap-2 rounded-md bg-primary hover:bg-primary transition-colors px-6 py-3.5 text-sm text-white shadow-md font-bold"
+            >
               Get Help
               <ArrowRight size={18} strokeWidth={2.5} />
-            </button>
+            </Link>
           </div>
 
           {/* Right Content (Gradient Card) */}

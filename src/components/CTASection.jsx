@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import { ROUTES } from "../config";
 
 const DEFAULT_TITLE = "Ready to Get Started?";
 const DEFAULT_DESCRIPTION =
@@ -31,9 +33,12 @@ const CTASection = ({
           {description}
         </p>
 
-        <button className="inline-flex items-center justify-center rounded-md bg-[#FF6B00] hover:bg-[#e66000] px-8 py-3.5 text-[15px] font-bold text-white transition-colors shadow-sm">
+        <Link
+          to={ROUTES.CONTACT}
+          className="inline-flex items-center justify-center rounded-md bg-[#FF6B00] hover:bg-[#e66000] px-8 py-3.5 text-[15px] font-bold text-white transition-colors shadow-sm"
+        >
           {buttonText}
-        </button>
+        </Link>
       </div>
     </section>
   );

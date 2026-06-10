@@ -1,5 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { ArrowRight, BookOpen, ClipboardList, FileText, GraduationCap } from "lucide-react";
+import { ROUTES } from "../../config";
 
 const GridCards = () => {
   const cards = [
@@ -94,9 +96,12 @@ const CardItem = ({ card, index }) => {
       
       {/* Link Action - mt-auto pushes it to the bottom so buttons align perfectly */}
       <div className="mt-auto pt-8">
-        <button className={`inline-flex items-center gap-2 text-[15px] font-bold ${card.linkColor} hover:opacity-80 transition-opacity`}>
+        <Link
+          to={ROUTES.CONTACT}
+          className={`inline-flex items-center gap-2 text-[15px] font-bold ${card.linkColor} hover:opacity-80 transition-opacity`}
+        >
           Get Help <ArrowRight size={18} strokeWidth={2.5} />
-        </button>
+        </Link>
       </div>
     </article>
   );

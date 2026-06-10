@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import {
   ArrowRight,
   PencilLine,
@@ -6,6 +7,7 @@ import {
   MessageSquare,
   GraduationCap,
 } from "lucide-react";
+import { ROUTES } from "../../config";
 
 const SubjectHero = ({ image }) => {
   // Sample image fallback to match the layout if no image is provided
@@ -73,9 +75,12 @@ const SubjectHero = ({ image }) => {
 
             {/* CTA Button */}
             <div className="mt-10">
-              <button className="inline-flex items-center gap-2 px-7 py-3.5 bg-primary hover:bg-primary-dark text-white font-semibold text-sm rounded-lg transition-colors shadow-md">
+              <Link
+                to={ROUTES.CONTACT}
+                className="inline-flex items-center gap-2 px-7 py-3.5 bg-primary hover:bg-primary-dark text-white font-semibold text-sm rounded-lg transition-colors shadow-md"
+              >
                 Get Help <ArrowRight size={18} strokeWidth={2.5} />
-              </button>
+              </Link>
             </div>
           </div>
 

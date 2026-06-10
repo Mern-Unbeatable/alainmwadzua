@@ -1,5 +1,7 @@
 import React, { memo } from "react";
 import { BookOpen, GraduationCap, Star, Zap, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
+import { ROUTES } from "../../config";
 
 const RIGHT_SIDE_IMAGE = "/expertise.webp";
 
@@ -89,10 +91,13 @@ const ExpertTutorsSection = memo(() => {
               </div>
             </div>
 
-            <button className="mt-8 inline-flex items-center gap-2 rounded-md bg-primary px-6 py-3 text-sm font-bold text-white transition-opacity hover:opacity-90">
+            <Link
+              to={ROUTES.SUBJECTS}
+              className="mt-8 inline-flex items-center gap-2 rounded-md bg-primary px-6 py-3 text-sm font-bold text-white transition-opacity hover:opacity-90"
+            >
               View All Subjects
               <ArrowRight size={16} strokeWidth={2.5} />
-            </button>
+            </Link>
           </div>
 
           <div className="flex justify-center lg:justify-end">

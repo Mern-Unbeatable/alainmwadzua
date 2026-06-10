@@ -1,5 +1,5 @@
-import React, { memo } from "react";
-import { Link } from "react-router-dom";
+import React, { memo, useCallback } from "react";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { ROUTES } from "../config";
 import { GraduationCap, Linkedin, Youtube } from "lucide-react";
 
@@ -19,6 +19,20 @@ const RESOURCE_LINKS = [
 ];
 
 const Footer = memo(() => {
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleGetHelp = useCallback(() => {
+    if (location.pathname === "/" || location.pathname === ROUTES.HOME) {
+      const element = document.getElementById("online-help-cta");
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+        return;
+      }
+    }
+    navigate(ROUTES.CONTACT);
+  }, [location.pathname, navigate]);
+
   return (
     <footer className="bg-black text-white ">
       <div className="container mx-auto px-4 pt-10 pb-5">
@@ -49,7 +63,8 @@ const Footer = memo(() => {
 
             <button
               type="button"
-              className="mt-5 bg-primary hover:bg-orange-400 text-white px-5 py-2.5 rounded-md transition-colors"
+              onClick={handleGetHelp}
+              className="mt-5 bg-primary hover:bg-orange-400 text-white px-5 py-2.5 rounded-md transition-colors cursor-pointer"
             >
               Get Help Now
             </button>
@@ -98,14 +113,28 @@ const Footer = memo(() => {
             </button>
 
             <div className="mt-5 flex items-center gap-3 text-gray-300">
-              <a href="#" aria-label="LinkedIn" className="hover:text-white">
+              <a
+                href="https://www.linkedin.com/in/online-class-writers-1a2859380"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+                className="hover:text-white"
+              >
                 <Linkedin size={18} />
               </a>
-              <a href="#" aria-label="YouTube" className="hover:text-white">
+              <a
+                href="https://youtube.com/@onlineclasswriters?si=ZxpLfSf7zjKNEDey"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="YouTube"
+                className="hover:text-white"
+              >
                 <Youtube size={18} />
               </a>
               <a
-                href="#"
+                href="https://x.com/_tutorsupport?s=21"
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label="X"
                 className="hover:text-white text-lg leading-none"
               >

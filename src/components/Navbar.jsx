@@ -1,5 +1,5 @@
 import React, { memo, useState, useCallback } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { Menu, X, ArrowRight, GraduationCap } from "lucide-react";
 import { ROUTES } from "../config";
 import NavbarMenu from "./NavbarMenu";
@@ -7,6 +7,21 @@ import NavbarMenu from "./NavbarMenu";
 const Navbar = memo(() => {
   const [menuOpen, setMenuOpen] = useState(false);
   const closeMenu = useCallback(() => setMenuOpen(false), []);
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleGetHelp = useCallback(() => {
+    if (location.pathname === "/" || location.pathname === ROUTES.HOME) {
+      const element = document.getElementById("online-help-cta");
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+        setMenuOpen(false);
+        return;
+      }
+    }
+    navigate(ROUTES.CONTACT);
+    setMenuOpen(false);
+  }, [location.pathname, navigate]);
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 w-full border-b border-gray-200 bg-white/95 shadow-sm backdrop-blur-sm">
@@ -27,7 +42,8 @@ const Navbar = memo(() => {
           <div className="flex items-center gap-2">
             <button
               type="button"
-              className="hidden xl:inline-flex items-center gap-2 bg-primary  text-white font-semibold text-sm px-5 py-2 rounded-md transition-colors"
+              onClick={handleGetHelp}
+              className="hidden xl:inline-flex items-center gap-2 bg-primary hover:bg-orange-400 text-white font-semibold text-sm px-5 py-2 rounded-md transition-colors cursor-pointer"
             >
               Get Help
               <ArrowRight size={16} />
@@ -56,7 +72,8 @@ const Navbar = memo(() => {
 
             <button
               type="button"
-              className="mt-3 w-full inline-flex items-center justify-center gap-2 bg-primary hover:bg-orange-400 text-white font-semibold text-sm px-5 py-2.5 rounded-md transition-colors"
+              onClick={handleGetHelp}
+              className="mt-3 w-full inline-flex items-center justify-center gap-2 bg-primary hover:bg-orange-400 text-white font-semibold text-sm px-5 py-2.5 rounded-md transition-colors cursor-pointer"
             >
               Get Help
               <ArrowRight size={16} />

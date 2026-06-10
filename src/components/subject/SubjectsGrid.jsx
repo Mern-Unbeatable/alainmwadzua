@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { ROUTES } from '../../config';
 import { 
   ArrowRight, Landmark, BookOpen, Calculator, Microscope, 
   Gavel, Sigma, FlaskConical, BriefcaseMedical, Megaphone, 
@@ -62,9 +64,10 @@ const SubjectsGrid = () => {
         {/* 4-Column Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-5">
           {subjects.map((subj, index) => (
-            <div 
+            <Link 
+              to={ROUTES.CONTACT}
               key={index} 
-              className="bg-white border border-[#E3BFB133] rounded-2xl p-5 hover:border-orange-200 hover:shadow-md transition-all duration-300 group cursor-pointer flex flex-col"
+              className="bg-white border border-[#E3BFB133] rounded-2xl p-5 hover:border-orange-200 hover:shadow-md transition-all duration-300 group cursor-pointer flex flex-col text-left"
               data-reveal="card"
               style={{ '--reveal-delay': `${70 + index * 30}ms` }}
             >
@@ -80,7 +83,7 @@ const SubjectsGrid = () => {
                 Get Help 
                 <ArrowRight size={14} className="transform group-hover:translate-x-0.5 transition-transform" />
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

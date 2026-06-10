@@ -97,7 +97,7 @@ const OnlineHelpCtaSection = memo(() => {
   };
 
   return (
-    <section className="relative isolate overflow-hidden bg-[#0F1C3F] py-16 sm:py-20 lg:py-24">
+    <section id="online-help-cta" className="relative isolate overflow-hidden bg-[#0F1C3F] py-16 sm:py-20 lg:py-24">
       <div className="pointer-events-none absolute left-0 top-0 h-[600px] w-[700px] -translate-x-1/3 -translate-y-1/3 bg-[radial-gradient(circle_closest-side,rgba(255,102,0,0.55),transparent)]" />
 
       <div className="container relative z-10 mx-auto px-4 ">
