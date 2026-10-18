@@ -2,6 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 require('dotenv').config();
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = (env, argv) => {
   const isProd = argv.mode === 'production';
@@ -60,6 +61,16 @@ module.exports = (env, argv) => {
               useShortDoctype: true,
             }
           : false,
+      }),
+      // Copy static assets (robots.txt, sitemap.xml, images) into dist
+      new CopyWebpackPlugin({
+        patterns: [
+          {
+            from: 'public',
+            to: '.',
+            globOptions: { ignore: ['**/index.html'] },
+          },
+        ],
       }),
     ],
     optimization: {
