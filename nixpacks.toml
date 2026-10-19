@@ -1,0 +1,9 @@
+# Coolify / Nixpacks deployment
+# Install and build use the defaults (`npm ci`, `npm run build`).
+# Start serves the static build from dist/ instead of the dev server.
+
+[variables]
+NIXPACKS_NODE_VERSION = "22"
+
+[start]
+cmd = "npx astro preview --host 0.0.0.0 --port 5173"

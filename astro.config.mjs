@@ -13,6 +13,9 @@ export default defineConfig({
   integrations: [react()],
   server: {
     port: 5173,
+    // Production (Coolify) serves dist/ with `astro preview` behind its proxy,
+    // so requests arrive with the site's own domains as Host
+    allowedHosts: true,
   },
   vite: {
     plugins: [tailwindcss()],
@@ -21,7 +24,6 @@ export default defineConfig({
       __API_BASE_URL__: JSON.stringify(API_BASE_URL),
     },
     server: {
-      allowedHosts: true,
       // Proxy /api/* → backend so browser never sees a CORS error in dev
       proxy: {
         '/api': {
