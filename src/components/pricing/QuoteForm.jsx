@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Swal from 'sweetalert2';
 import { postQuoteRequest } from '../../services/quoteService';
+import { withErrorBoundary } from '../ErrorBoundary';
 
 const helpTypeMap = {
   'Do my online class': 'DO_MY_ONLINE_CLASS',
@@ -220,4 +221,4 @@ const QuoteForm = () => {
   );
 };
 
-export default QuoteForm;
+export default withErrorBoundary(QuoteForm);

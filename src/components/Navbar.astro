@@ -1,0 +1,94 @@
+---
+import { Menu, X, ArrowRight, GraduationCap } from 'lucide-react';
+import { ROUTES } from '../config';
+import NavbarMenu from './NavbarMenu.astro';
+
+const { pathname } = Astro.props;
+---
+
+<nav class="fixed top-0 left-0 right-0 z-50 w-full border-b border-gray-200 bg-white/95 shadow-sm backdrop-blur-sm">
+  <div class="container mx-auto px-4 ">
+    <div class="flex items-center justify-between h-20">
+      <a href={ROUTES.HOME} class="inline-flex items-center gap-2.5 shrink-0">
+        <span class="w-12 h-12 rounded-lg bg-primary text-white flex items-center justify-center">
+          <GraduationCap size={28} />
+        </span>
+        <span class="text-black font-semibold text-lg md:text-xl tracking-tight">
+          Online Class Writers
+        </span>
+      </a>
+      <NavbarMenu pathname={pathname} />
+      <div class="flex items-center gap-2">
+        <button
+          type="button"
+          data-nav-get-help
+          class="hidden xl:inline-flex items-center gap-2 bg-primary hover:bg-orange-400 text-white font-semibold text-sm px-5 py-2 rounded-md transition-colors cursor-pointer"
+        >
+          Get Help
+          <ArrowRight size={16} />
+        </button>
+        <button
+          type="button"
+          id="mobile-menu-toggle"
+          aria-label="Open menu"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+          class="xl:hidden p-2 rounded text-gray-700 hover:bg-gray-200 transition-colors"
+        >
+          <X size={20} data-menu-icon="close" hidden />
+          <Menu size={20} data-menu-icon="open" />
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div
+    id="mobile-menu"
+    hidden
+    class="xl:hidden fixed top-20 left-0 right-0 z-50 border-t border-gray-200 bg-white shadow-xl"
+  >
+    <div class="max-w-6xl mx-auto px-4 py-3 max-h-[calc(100vh-5rem)] overflow-y-auto">
+      <NavbarMenu mobile pathname={pathname} />
+
+      <button
+        type="button"
+        data-nav-get-help
+        class="mt-3 w-full inline-flex items-center justify-center gap-2 bg-primary hover:bg-orange-400 text-white font-semibold text-sm px-5 py-2.5 rounded-md transition-colors cursor-pointer"
+      >
+        Get Help
+        <ArrowRight size={16} />
+      </button>
+    </div>
+  </div>
+</nav>
+
+<script>
+  import { handleGetHelp } from '../utils/getHelp';
+
+  const toggle = document.getElementById('mobile-menu-toggle');
+  const menu = document.getElementById('mobile-menu');
+  const openIcon = toggle?.querySelector('[data-menu-icon="open"]');
+  const closeIcon = toggle?.querySelector('[data-menu-icon="close"]');
+
+  const setMenuOpen = (open) => {
+    if (!toggle || !menu) return;
+    menu.hidden = !open;
+    toggle.setAttribute('aria-expanded', String(open));
+    toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    openIcon?.toggleAttribute('hidden', open);
+    closeIcon?.toggleAttribute('hidden', !open);
+  };
+
+  toggle?.addEventListener('click', () => setMenuOpen(menu?.hidden ?? false));
+
+  document.querySelectorAll('[data-mobile-menu-link]').forEach((link) => {
+    link.addEventListener('click', () => setMenuOpen(false));
+  });
+
+  document.querySelectorAll('[data-nav-get-help]').forEach((button) => {
+    button.addEventListener('click', () => {
+      setMenuOpen(false);
+      handleGetHelp();
+    });
+  });
+</script>

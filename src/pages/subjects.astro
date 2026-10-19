@@ -1,0 +1,22 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTASection from '../components/CTASection.astro';
+import SubjectHero from '../components/subject/SubjectHero.astro';
+import SubjectHighlights from '../components/subject/SubjectHighlights.astro';
+import SubjectsGrid from '../components/subject/SubjectsGrid.astro';
+---
+
+<BaseLayout>
+  <div class="w-full bg-white font-sans text-slate-800 antialiased">
+    {/* SECTION 1: HERO INTRO AREA */}
+    <SubjectHero image="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=1000" />
+
+    <SubjectHighlights />
+
+    <SubjectsGrid />
+
+    <div data-reveal="text" style="--reveal-delay: 120ms">
+      <CTASection />
+    </div>
+  </div>
+</BaseLayout>

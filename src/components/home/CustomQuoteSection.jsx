@@ -2,6 +2,7 @@ import React, { useState, memo } from "react";
 import { ChevronLeft } from "lucide-react";
 import Swal from "sweetalert2";
 import { postQuoteRequest } from "../../services/quoteService";
+import { withErrorBoundary } from "../ErrorBoundary";
 
 const QUOTE_TOPICS = [
   "Do my online class",
@@ -261,4 +262,4 @@ const CustomQuoteSection = memo(() => {
 
 CustomQuoteSection.displayName = "CustomQuoteSection";
 
-export default CustomQuoteSection;
+export default withErrorBoundary(CustomQuoteSection);

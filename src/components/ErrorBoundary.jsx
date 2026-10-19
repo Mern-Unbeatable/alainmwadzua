@@ -95,4 +95,20 @@ class ErrorBoundary extends Component {
   }
 }
 
+/**
+ * Wrap a React island so a crash inside it shows the fallback UI
+ * instead of leaving a blank area on the static page.
+ */
+export const withErrorBoundary = (WrappedComponent) => {
+  const WithErrorBoundary = (props) => (
+    <ErrorBoundary>
+      <WrappedComponent {...props} />
+    </ErrorBoundary>
+  );
+  WithErrorBoundary.displayName = `withErrorBoundary(${
+    WrappedComponent.displayName || WrappedComponent.name || 'Component'
+  })`;
+  return WithErrorBoundary;
+};
+
 export default ErrorBoundary;

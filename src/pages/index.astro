@@ -1,0 +1,38 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import RevealObserver from '../components/RevealObserver.astro';
+import HeroSection from '../components/home/HeroSection.astro';
+import CustomQuoteSection from '../components/home/CustomQuoteSection.jsx';
+import HowItWorksSection from '../components/home/HowItWorksSection.astro';
+import WhyChooseSection from '../components/home/WhyChooseSection.astro';
+import OnlineHelpCtaSection from '../components/home/OnlineHelpCtaSection.jsx';
+import ServicesSection from '../components/home/ServicesSection.astro';
+import ExpertTutorsSection from '../components/home/ExpertTutorsSection.astro';
+import DisclaimerSection from '../components/home/DisclaimerSection.astro';
+
+const seo = {
+  title: '',
+  description: 'Welcome to our React application',
+  keywords: ['react', 'webpack', 'tailwind', 'router'],
+};
+---
+
+<BaseLayout seo={seo}>
+  <HeroSection />
+
+  <CustomQuoteSection client:load />
+
+  <HowItWorksSection />
+
+  <WhyChooseSection />
+
+  <OnlineHelpCtaSection client:load />
+
+  <ServicesSection />
+
+  <ExpertTutorsSection />
+
+  <DisclaimerSection />
+
+  <RevealObserver />
+</BaseLayout>

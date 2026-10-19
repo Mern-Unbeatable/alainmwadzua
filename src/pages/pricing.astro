@@ -1,0 +1,18 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PricingHeaderSection from '../components/pricing/PricingHeaderSection.astro';
+import PricingMainSection from '../components/pricing/PricingMainSection.astro';
+import FeatureGrid from '../components/pricing/FeatureGrid.astro';
+import CTASection from '../components/CTASection.astro';
+---
+
+<BaseLayout>
+  <div class="min-h-screen bg-[#fafbfc]">
+    <PricingHeaderSection />
+    <PricingMainSection />
+    <FeatureGrid />
+    <div data-reveal="text" style="--reveal-delay: 120ms">
+      <CTASection />
+    </div>
+  </div>
+</BaseLayout>

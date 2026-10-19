@@ -1,0 +1,16 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BlogTopSection from '../../components/blog/BlogTopSection.astro';
+import BlogDivider from '../../components/blog/BlogDivider.astro';
+import BlogPostsGridSection from '../../components/blog/BlogPostsGridSection.astro';
+---
+
+<BaseLayout>
+  <div class="container mx-auto px-4 py-14 md:py-16 lg:py-20 bg-white">
+    <BlogTopSection />
+    <div data-reveal="text" style="--reveal-delay: 120ms">
+      <BlogDivider />
+    </div>
+    <BlogPostsGridSection />
+  </div>
+</BaseLayout>
