@@ -1,0 +1,14 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ServicesContent from '../components/services/ServicesContent.astro';
+
+const seo = {
+  title: 'Our Services',
+  description: 'Explore our professional services',
+  keywords: ['services', 'web development', 'mobile', 'design', 'consulting'],
+};
+---
+
+<BaseLayout seo={seo}>
+  <ServicesContent />
+</BaseLayout>

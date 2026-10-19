@@ -1,0 +1,34 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import RevealObserver from '../components/RevealObserver.astro';
+import AboutHeroSection from '../components/about/AboutHeroSection.astro';
+import AboutStorySection from '../components/about/AboutStorySection.astro';
+import AboutFeaturesSection from '../components/about/AboutFeaturesSection.astro';
+import StudentPromiseSection from '../components/about/StudentPromiseSection.astro';
+import CTASection from '../components/CTASection.astro';
+---
+
+<BaseLayout>
+  <div class="w-full bg-white">
+    <AboutHeroSection />
+    <div data-reveal="text" style="--reveal-delay: 40ms">
+      <AboutStorySection />
+    </div>
+    <div data-reveal="text" style="--reveal-delay: 90ms">
+      <AboutFeaturesSection />
+    </div>
+    <div data-reveal="card" style="--reveal-delay: 120ms">
+      <StudentPromiseSection />
+    </div>
+    <div data-reveal="text" style="--reveal-delay: 150ms">
+      <CTASection
+        title="Get Help"
+        description="Our goal is to help busy students get reliable, confidential online class help
+so they can save time, reduce stress, and achieve better grades."
+        buttonText="Partner With Us Today"
+      />
+    </div>
+  </div>
+
+  <RevealObserver />
+</BaseLayout>

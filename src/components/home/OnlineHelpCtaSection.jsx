@@ -1,6 +1,7 @@
 import React, { memo, useState } from "react";
 import Swal from "sweetalert2";
 import { postQuoteRequest } from "../../services/quoteService";
+import { withErrorBoundary } from "../ErrorBoundary";
 
 const HELP_TOPICS = [
   "Do my online class",
@@ -261,4 +262,4 @@ const OnlineHelpCtaSection = memo(() => {
 
 OnlineHelpCtaSection.displayName = "OnlineHelpCtaSection";
 
-export default OnlineHelpCtaSection;
+export default withErrorBoundary(OnlineHelpCtaSection);

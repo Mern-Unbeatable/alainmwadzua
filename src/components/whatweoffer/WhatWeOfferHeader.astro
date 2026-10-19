@@ -1,0 +1,78 @@
+---
+import { ArrowRight, BookOpen, ClipboardList, FileText } from 'lucide-react';
+import { ROUTES } from '../../config';
+
+// Define the items internally with their specific icons to match the design
+const offerItems = [
+  { title: 'Complete Class Help', subtitle: 'Full Course Support', icon: BookOpen },
+  { title: 'Exam Preparation', subtitle: 'Test Taking Services', icon: ClipboardList },
+  { title: 'Assignment Help', subtitle: 'All Academic Levels', icon: FileText },
+];
+---
+
+<section class="py-16 lg:py-20" style="background-color: #FEFAFA">
+  <div class="container mx-auto px-4 ">
+    <div class="grid gap-12 lg:grid-cols-2">
+      {/* Left Content */}
+      <div class="max-w-3xl pr-4 " data-reveal="text" style="--reveal-delay: 40ms">
+        <div class="inline-flex items-center gap-2 rounded-full bg-[#FFEDD4] px-3 py-1.5 text-sm font-medium text-primary mb-4">
+          <span class="h-1.5 w-1.5 rounded-full bg-primary"></span>
+          Academic Excellence
+        </div>
+
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#111827] leading-tight mb-4">
+          Academic Services <span class="text-primary">We Offer</span>
+        </h1>
+
+        <p class="text-[#4B5563] text-base mb-12  font-medium">
+          From complete online class help, exam preparation help and test taking services,
+          homework and assignment help to project and essay writing help, we do it all! A
+          lot more than you might think!
+        </p>
+
+        <a
+          href={ROUTES.CONTACT}
+          class="inline-flex items-center gap-2 rounded-md bg-primary hover:bg-primary transition-colors px-6 py-3.5 text-sm text-white shadow-md font-bold"
+        >
+          Get Help
+          <ArrowRight size={18} strokeWidth={2.5} />
+        </a>
+      </div>
+
+      {/* Right Content (Gradient Card) */}
+      <div class="relative w-full max-w-2xl justify-self-end " data-reveal="card" style="--reveal-delay: 120ms">
+        {/* Soft background glow shadow seen in the image */}
+        <div class="absolute -inset-6 bg-primary blur-[80px] opacity-10 rounded-l z-0"></div>
+
+        {/* Main Gradient Card */}
+        <div
+          class="relative z-10 rounded-lg p-6 sm:p-8 shadow-2xl"
+          style="background-image: linear-gradient(to bottom right, #101828, #1E2939)"
+        >
+          <div class="flex flex-col gap-4">
+            {
+              offerItems.map(({ title, subtitle, icon: Icon }, index) => (
+                <div
+                  class="flex items-center gap-5 rounded-xl bg-[#2A3546] p-4 sm:p-5 hover:bg-[#323d4e] transition-colors"
+                  data-reveal="card"
+                  style={`--reveal-delay: ${160 + index * 70}ms`}
+                >
+                  {/* Orange Icon Container */}
+                  <div class="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-[#FF6B00] shadow-sm">
+                    <Icon size={24} className="text-white" />
+                  </div>
+
+                  {/* Text Details */}
+                  <div>
+                    <h3 class="text-base font-bold text-white mb-0.5">{title}</h3>
+                    <p class="text-sm font-medium text-slate-400">{subtitle}</p>
+                  </div>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

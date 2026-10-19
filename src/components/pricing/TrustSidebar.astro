@@ -1,0 +1,60 @@
+---
+import {
+  FileQuestion, DollarSign, Medal, ShieldCheck,
+  Clock, Eye, Star, Lock, Globe, Zap,
+  Tag,
+} from 'lucide-react';
+
+const trustPoints = [
+  { icon: DollarSign, iconClass: 'w-4 h-4 text-blue-500', text: 'Affordable Services', bg: 'bg-blue-50' },
+  { icon: Medal, iconClass: 'w-4 h-4 text-orange-500', text: 'Experienced Professionals', bg: 'bg-orange-50' },
+  { icon: ShieldCheck, iconClass: 'w-4 h-4 text-gray-600', text: 'Guaranteed Original Content', bg: 'bg-gray-100' },
+  { icon: Clock, iconClass: 'w-4 h-4 text-purple-500', text: 'Timely Submissions', bg: 'bg-purple-50' },
+  { icon: Eye, iconClass: 'w-4 h-4 text-green-500', text: 'Transparent Processes', bg: 'bg-green-50' },
+  { icon: Star, iconClass: 'w-4 h-4 text-teal-500', text: 'A or B Grade Guaranteed', bg: 'bg-teal-50' },
+  { icon: Lock, iconClass: 'w-4 h-4 text-blue-600', text: '100% Confidential', bg: 'bg-blue-50' },
+  { icon: Globe, iconClass: 'w-4 h-4 text-orange-600', text: 'US Based Academic Experts', bg: 'bg-orange-50' },
+  { icon: Zap, iconClass: 'w-4 h-4 text-green-400', text: 'Fast 30-Min Response', bg: 'bg-green-50' },
+];
+---
+
+<div class="space-y-6">
+  {/* Support Alert Box */}
+  <div class="bg-gradient-to-r from-[#FFF5E6] to-[#FFE0B3] rounded-2xl p-6 relative overflow-hidden">
+    {/* Decorative heart watermark background like the image */}
+    <div class="absolute -right-4 -top-4 opacity-10">
+      <Tag className="w-24 h-24 text-[#191C1E]" />
+    </div>
+
+    <div class="flex gap-4 relative z-10">
+      <div class="p-2.5 bg-primary rounded-xl text-white shrink-0 h-fit">
+        <FileQuestion className="w-5 h-5" />
+      </div>
+      <div>
+        <h4 class="font-medium text-[#561D00] text-lg mb-1">Need help with an online class?</h4>
+        <p class="text-base text-gray-600 leading-relaxed">
+          Our support team is available 7 days a week to review your needs and provide a custom quote.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  {/* Trust List */}
+  <div class="bg-white border border-[#E3BFB1] rounded-2xl p-6 shadow-[0_2px_15px_rgb(0,0,0,0.03)]">
+    <h3 class="text-lg font-bold tracking-widest text-gray-800 uppercase border-b border-[#E3BFB1] pb-4 mb-5">
+      WHY STUDENTS TRUST US
+    </h3>
+    <ul class="space-y-4">
+      {
+        trustPoints.map(({ icon: Icon, iconClass, text, bg }) => (
+          <li class="flex items-center gap-4">
+            <div class={`w-8 h-8 rounded-full ${bg} flex items-center justify-center shrink-0`}>
+              <Icon className={iconClass} />
+            </div>
+            <span class="text-base text-gray-700">{text}</span>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</div>

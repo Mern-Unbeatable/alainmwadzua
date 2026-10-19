@@ -1,0 +1,1 @@
+const T={HOME:"/",CONTACT:"/contact"},E={BASE_URL:"https://api-alainmwadzua.maktechgroup.tech",TIMEOUT:1e4,RETRY_ATTEMPTS:3,RETRY_DELAY:1e3},a={LCP:2500,FCP:1800,CLS:.1,INP:200,TTFB:800};export{E as A,a as P,T as R};

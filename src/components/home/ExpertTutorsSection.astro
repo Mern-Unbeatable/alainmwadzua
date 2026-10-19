@@ -1,0 +1,89 @@
+---
+import { BookOpen, GraduationCap, Star, Zap, ArrowRight } from 'lucide-react';
+import { ROUTES } from '../../config';
+
+const RIGHT_SIDE_IMAGE = '/expertise.webp';
+
+const LIST_ITEMS = [
+  'Discussion Posts & Replies',
+  'Full Semester Class Management',
+  'Homework & Assignments',
+  'Midterms & Final Exams',
+];
+---
+
+<section class="pb-14 sm:pb-16 lg:pb-20 bg-white">
+  <div class="container mx-auto px-4 ">
+    <div class="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+      <div class="max-w-2xl">
+        <h2 class="text-3xl sm:text-4xl lg:text-[42px] font-semibold text-slate-900 leading-[1.2]">
+          Expert Tutors Across All Major Disciplines
+        </h2>
+
+        <p class="mt-5 text-base text-slate-600 leading-relaxed">
+          Whether you&apos;re struggling with advanced calculus, nursing
+          prerequisites, or extensive research papers in history or
+          Management, our team of degree- holding specialists is prepared to
+          step in. We will perfectly take your Class and get you A-Grades!
+        </p>
+
+        <ul class="mt-6 space-y-3">
+          {
+            LIST_ITEMS.map((item) => (
+              <li class="flex items-center gap-3 text-base font-semibold text-slate-800">
+                <span class="h-1.5 w-1.5 rounded-full bg-slate-800 shrink-0"></span>
+                {item}
+              </li>
+            ))
+          }
+        </ul>
+
+        <div class="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-3">
+          <div class="flex items-center gap-3 rounded-lg border border-slate-200 bg-white p-3 shadow-sm">
+            <BookOpen size={20} strokeWidth={1.5} className="text-primary shrink-0" />
+            <span class="text-sm font-semibold text-slate-700 leading-tight">
+              Exams, Essays &<br />Papers
+            </span>
+          </div>
+
+          <div class="flex items-center gap-3 rounded-lg border border-slate-200 bg-white p-3 shadow-sm">
+            <GraduationCap size={20} strokeWidth={1.5} className="text-primary shrink-0" />
+            <span class="text-sm font-semibold text-slate-700 leading-tight">
+              Entire Online<br />Classes
+            </span>
+          </div>
+
+          <div class="flex items-center gap-3 rounded-lg border border-slate-200 bg-white p-3 shadow-sm">
+            <Star size={20} strokeWidth={1.5} className="text-primary shrink-0" />
+            <span class="text-sm font-semibold text-slate-700 leading-tight">
+              Top Grades-<br />A or B
+            </span>
+          </div>
+
+          <div class="flex items-center gap-3 rounded-lg border border-slate-200 bg-white p-3 shadow-sm">
+            <Zap size={20} strokeWidth={1.5} className="text-primary shrink-0" />
+            <span class="text-sm font-semibold text-slate-700 leading-tight">
+              Fast<br />Delivery
+            </span>
+          </div>
+        </div>
+
+        <a
+          href={ROUTES.SUBJECTS}
+          class="mt-8 inline-flex items-center gap-2 rounded-md bg-primary px-6 py-3 text-sm font-bold text-white transition-opacity hover:opacity-90"
+        >
+          View All Subjects
+          <ArrowRight size={16} strokeWidth={2.5} />
+        </a>
+      </div>
+
+      <div class="flex justify-center lg:justify-end">
+        <img
+          src={RIGHT_SIDE_IMAGE}
+          alt="Expert Tutors Grid"
+          class="w-full max-w-[550px] object-contain drop-shadow-sm"
+        />
+      </div>
+    </div>
+  </div>
+</section>

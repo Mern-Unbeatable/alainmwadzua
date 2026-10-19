@@ -8,6 +8,32 @@
 
 ---
 
+## Astro (current setup)
+
+The site now runs on **Astro 5** instead of Webpack + React Router. Sections below that mention Webpack, `React.lazy`, or `react-router-dom` describe the old setup.
+
+| Command           | What it does                                       |
+| ----------------- | -------------------------------------------------- |
+| `npm run dev`     | Dev server on http://localhost:5173 (`/api` proxied) |
+| `npm start`       | Same, and opens the browser                        |
+| `npm run build`   | Static build to `dist/` (one HTML file per page)   |
+| `npm run preview` | Serve the built `dist/` locally                    |
+
+Requires Node `^20.3` or `>=22`. `API_BASE_URL` is still read from `.env` (or the shell) at build time.
+
+**How it is organised**
+
+- `src/pages/*.astro`: one file per route (`/`, `/about`, `/What-We-Offe`, `/blog/[slug]`, …). `404.astro` replaces the old catch-all route.
+- `src/layouts/BaseLayout.astro`: `<head>`, Navbar, `<main class="pt-20">`, Footer. Pages that used `useSEO()` pass a `seo` prop instead.
+- `src/components/**/*.astro`: static sections, rendered to HTML with no JavaScript. Lucide icons are still the `lucide-react` components, rendered at build time.
+- **React islands** (`client:load`): the four quote forms that call the API. `CustomQuoteSection.jsx`, `OnlineHelpCtaSection.jsx`, `pricing/QuoteForm.jsx`, `contact/ContactForm.jsx`. Each is wrapped in `ErrorBoundary`.
+- Small inline `<script>` blocks handle the mobile menu, "Get Help" buttons, and the FAQ accordion.
+- `src/services`, `src/config`, `src/hooks/useApi.js`, `src/utils/web-vitals.js`: unchanged API and config layer.
+
+**Hosting:** upload `dist/` to any static host. Point the host's 404 page at `dist/404.html`, and remove any old SPA rule that rewrites every path to `/index.html`.
+
+---
+
 ## Mission
 
 Act as a **Principal Frontend Architect** (10+ years experience). Deliver production-grade, scalable, secure, and high-performance frontend applications. Generate only clean, structured, maintainable, and professional code. All engineering standards defined in this document are non-negotiable.

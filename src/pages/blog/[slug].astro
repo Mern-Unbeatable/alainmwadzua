@@ -1,0 +1,197 @@
+---
+import {
+  ArrowLeft,
+  Calendar,
+  Clock,
+  User,
+  ShieldCheck,
+  CheckCircle,
+  ChevronLeft,
+  ChevronRight,
+  ArrowRight,
+} from 'lucide-react';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import blogPosts from '../../data/blogPosts.json';
+import { ROUTES } from '../../config';
+
+// One static page per post; unknown slugs fall through to 404.astro,
+// which sends /blog/* visitors back to the blog index.
+export function getStaticPaths() {
+  return blogPosts.map((post) => ({ params: { slug: post.slug }, props: { post } }));
+}
+
+const { post } = Astro.props;
+
+// Get 3 related posts for the bottom section
+const relatedPosts = blogPosts
+  .filter((item) => item.slug !== post.slug)
+  .slice(0, 3);
+---
+
+<BaseLayout>
+  <div class="bg-white">
+    {/* Main Article Container */}
+    <div class="container mx-auto px-4 py-14 md:py-16 lg:py-20 ">
+      <div class="">
+        {/* Back Link */}
+        <a
+          href={ROUTES.BLOG}
+          class="inline-flex items-center gap-2 text-sm font-medium text-slate-600 hover:text-[#FF6B00] transition-colors mb-8"
+          data-reveal="text"
+        >
+          <ArrowLeft size={16} />
+          Back
+        </a>
+
+        {/* Header Area */}
+        <header class="mb-10" data-reveal="text">
+          <h1 class="text-3xl md:text-4xl lg:text-[40px] font-bold text-[#1a2b4c] leading-tight mb-6">
+            {post.title}
+          </h1>
+
+          <div class="flex flex-wrap items-center gap-6 text-sm text-gray-500 font-medium">
+            <span class="inline-flex items-center gap-2">
+              <User size={16} className="text-[#FF6B00]" />
+              {post.author || 'Dr. Sarah Collins'}
+            </span>
+            <span class="inline-flex items-center gap-2">
+              <Calendar size={16} />
+              {post.date}
+            </span>
+            <span class="inline-flex items-center gap-2">
+              <Clock size={16} />
+              {post.readTime}
+            </span>
+          </div>
+        </header>
+
+        {/* Hero Image */}
+        <div
+          class="relative w-full h-[300px] md:h-[400px] lg:h-[450px] overflow-hidden rounded-2xl mb-12"
+          data-reveal="card"
+        >
+          <img src={post.heroImage} alt={post.title} class="w-full h-full object-cover" />
+        </div>
+
+        {/* Article Body */}
+        <article class="space-y-10">
+          <p class="text-base md:text-lg text-slate-600 leading-relaxed" data-reveal="text">
+            {post.intro}
+          </p>
+
+          {
+            post.sections.map((section) => (
+              <section data-reveal="text">
+                <h2 class="text-2xl font-bold text-[#1a2b4c] mb-4">{section.heading}</h2>
+                <div class="space-y-5 text-slate-600 leading-relaxed">
+                  {section.paragraphs.map((paragraph) => (
+                    <p>{paragraph}</p>
+                  ))}
+                </div>
+
+                {/* Highlight / Blockquote */}
+                {section.highlight && (
+                  <div class="mt-6 rounded-lg bg-[#F4F7FF] px-6 py-5 border-l-4 border-[#D8E4FF]">
+                    <p class="text-[#1a2b4c] italic text-sm md:text-base font-medium">
+                      "{section.highlight}"
+                    </p>
+                  </div>
+                )}
+              </section>
+            ))
+          }
+
+          {/* Centered CTA Callout Box */}
+          <div
+            class="rounded-2xl bg-[#FFE5D8] px-6 py-10 md:py-12 flex flex-col items-center text-center"
+            data-reveal="card"
+          >
+            <h3 class="text-2xl font-bold text-[#1a2b4c] mb-3">
+              {post.callout?.title || 'Need Help With Your Classes?'}
+            </h3>
+            <p class="text-slate-700 leading-relaxed mb-8 max-w-xl text-sm md:text-base">
+              {
+                post.callout?.description ||
+                  "Don't let one difficult subject pull down your entire GPA. Our professional writers and academic experts are ready to assist you with essays, exams, and full-course management."
+              }
+            </p>
+
+            <a
+              href={ROUTES.CONTACT}
+              class="inline-flex items-center justify-center gap-2 rounded-md bg-[#FF6B00] px-8 py-3.5 text-sm font-bold text-white transition-colors hover:bg-[#e65d00] mb-5 shadow-sm"
+            >
+              {post.callout?.buttonText || 'Get Free Quote Now'}
+              <ArrowRight size={16} />
+            </a>
+
+            <div class="flex items-center gap-6 text-xs text-slate-600 font-medium">
+              <span class="flex items-center gap-1.5">
+                <ShieldCheck size={14} className="text-[#FF6B00]" />
+                Secured Privacy
+              </span>
+              <span class="flex items-center gap-1.5">
+                <CheckCircle size={14} className="text-[#FF6B00]" />
+                Expert Writers
+              </span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    {/* Read Next Section */}
+    <div class="container mx-auto px-4 pb-14 md:pb-16 lg:pb-20  border-t border-gray-200 pt-16">
+      <div class=" ">
+        {/* Section Header */}
+        <div class="flex justify-between items-center mb-8">
+          <h2 class="text-2xl font-bold text-[#1a2b4c]">Read Next</h2>
+          <div class="flex gap-3">
+            <button class="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center text-gray-500 hover:border-[#FF6B00] hover:text-[#FF6B00] transition-colors">
+              <ChevronLeft size={20} />
+            </button>
+            <button class="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center text-gray-500 hover:border-[#FF6B00] hover:text-[#FF6B00] transition-colors">
+              <ChevronRight size={20} />
+            </button>
+          </div>
+        </div>
+
+        {/* Related Posts Grid */}
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {
+            relatedPosts.map((relatedPost) => (
+              <div class="bg-[#FAF8F5] rounded-2xl overflow-hidden flex flex-col h-full">
+                <div class="h-48 overflow-hidden">
+                  <img
+                    src={relatedPost.heroImage}
+                    alt={relatedPost.title}
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+                <div class="p-6 flex flex-col grow">
+                  <h3 class="text-lg font-bold text-[#1a2b4c] mb-3 leading-snug">
+                    {relatedPost.title}
+                  </h3>
+                  <p class="text-sm text-slate-600 line-clamp-3 mb-6 flex-grow">
+                    {relatedPost.intro}
+                  </p>
+
+                  <div class="flex items-center justify-between mt-auto">
+                    <span class="text-xs text-slate-500 font-medium">
+                      {relatedPost.date} • {relatedPost.readTime}
+                    </span>
+                    <a
+                      href={`/blog/${relatedPost.slug}`}
+                      class="text-sm font-semibold text-[#FF6B00] hover:text-[#e65d00] flex items-center gap-1"
+                    >
+                      Read More <ChevronRight size={14} />
+                    </a>
+                  </div>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

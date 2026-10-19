@@ -1,0 +1,21 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import WhatWeOfferHeader from '../components/whatweoffer/WhatWeOfferHeader.astro';
+import GridCards from '../components/whatweoffer/GridCards.astro';
+import CTASection from '../components/CTASection.astro';
+---
+
+<BaseLayout>
+  <div class="bg-white">
+    <WhatWeOfferHeader />
+    <GridCards />
+    <div data-reveal="text" style="--reveal-delay: 120ms">
+      <CTASection
+        title="Ready to Get Started?"
+        description="Stop stressing over coursework. Let our experts handle it."
+        buttonText="Get Help Now"
+        image="/cta.webp"
+      />
+    </div>
+  </div>
+</BaseLayout>

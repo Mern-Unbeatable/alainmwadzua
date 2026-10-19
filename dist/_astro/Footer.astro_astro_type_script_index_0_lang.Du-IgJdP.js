@@ -1,0 +1,1 @@
+import{h as e}from"./getHelp.DJfpW6GE.js";import"./index.CgDanZ4f.js";document.querySelector("[data-footer-get-help]")?.addEventListener("click",e);document.querySelector("[data-footer-email-us]")?.addEventListener("click",()=>{window.open("https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=qualitywriters400@gmail.com","_blank","noopener,noreferrer")});

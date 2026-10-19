@@ -1,0 +1,87 @@
+---
+import { ROUTES } from '../../config';
+import {
+  ArrowRight, Landmark, BookOpen, Calculator, Microscope,
+  Gavel, Sigma, FlaskConical, BriefcaseMedical, Megaphone,
+  Shield, TrendingUp, UserCog, BookText, Banknote, Shapes,
+  History, Monitor, Target, Users, Settings, Lightbulb,
+  Atom, Globe, Beaker, UsersRound, BarChart2, Compass,
+  Activity, MoreHorizontal,
+} from 'lucide-react';
+
+// Full list of subjects matching the image
+const subjects = [
+  { name: 'Accounting', icon: Landmark },
+  { name: 'Theology', icon: BookOpen },
+  { name: 'Algebra', icon: Calculator },
+  { name: 'Biology', icon: Microscope },
+  { name: 'Business Law', icon: Gavel },
+  { name: 'Calculus', icon: Sigma },
+  { name: 'Chemistry', icon: FlaskConical },
+  { name: 'Nursing', icon: BriefcaseMedical },
+  { name: 'Communication', icon: Megaphone },
+  { name: 'Criminal Justice', icon: Shield },
+  { name: 'Economics', icon: TrendingUp },
+  { name: 'Engineering', icon: UserCog },
+  { name: 'English', icon: BookText },
+  { name: 'Finance', icon: Banknote },
+  { name: 'Geometry', icon: Shapes },
+  { name: 'History', icon: History },
+  { name: 'IT', icon: Monitor },
+  { name: 'Marketing', icon: Target },
+  { name: 'Management', icon: Users },
+  { name: 'Operations Management', icon: Settings },
+  { name: 'Philosophy', icon: Lightbulb },
+  { name: 'Physics', icon: Atom },
+  { name: 'Political Science', icon: Globe },
+  { name: 'Science', icon: Beaker },
+  { name: 'Sociology', icon: UsersRound },
+  { name: 'Statistics', icon: BarChart2 },
+  { name: 'Trigonometry', icon: Compass },
+  { name: 'Strategic Management', icon: Activity },
+  { name: 'Others', icon: MoreHorizontal },
+];
+---
+
+<section class="py-14 md:py-16 lg:py-20 bg-white">
+  <div class="container mx-auto px-4 ">
+    {/* Centered Header Section */}
+    <div
+      class="text-center max-w-2xl mx-auto mb-12 sm:mb-16 space-y-3"
+      data-reveal="text"
+      style="--reveal-delay: 40ms"
+    >
+      <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">
+        Subjects We Support
+      </h2>
+      <p class="text-base text-slate-500">
+        Select your subject below to get a custom quote for your specific needs.
+      </p>
+    </div>
+
+    {/* 4-Column Grid */}
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-5">
+      {
+        subjects.map(({ name, icon: Icon }, index) => (
+          <a
+            href={ROUTES.CONTACT}
+            class="bg-white border border-[#E3BFB133] rounded-2xl p-5 hover:border-orange-200 hover:shadow-md transition-all duration-300 group cursor-pointer flex flex-col text-left"
+            data-reveal="card"
+            style={`--reveal-delay: ${70 + index * 30}ms`}
+          >
+            <div class="text-slate-700 mb-3">
+              <Icon size={20} strokeWidth={1.5} />
+            </div>
+
+            <h3 class="font-medium text-lg text-slate-800 tracking-tight mb-3">{name}</h3>
+
+            <div class="mt-auto text-sm font-bold text-[#FF6B00] uppercase tracking-wide flex items-center gap-1.5 opacity-90 group-hover:opacity-100">
+              Get Help
+              <ArrowRight size={14} className="transform group-hover:translate-x-0.5 transition-transform" />
+            </div>
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</section>
