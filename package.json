@@ -5,9 +5,9 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "start": "astro dev --open",
-    "dev": "astro dev",
-    "build": "astro build",
+    "start": "node api.js && astro dev --open",
+    "dev": "node api.js && astro dev",
+    "build": "node api.js && astro build",
     "preview": "astro preview",
     "astro": "astro"
   },
