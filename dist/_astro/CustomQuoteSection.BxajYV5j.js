@@ -1,4 +1,4 @@
-import{j as t,w as P,S as y,p as R}from"./quoteService.B4G2Y6ok.js";import{r as a}from"./index.DK-fsZOb.js";import"./index.CgDanZ4f.js";/**
+import{j as t,w as P,S as y,p as R}from"./quoteService.CKXWLPFt.js";import{r as a}from"./index.DK-fsZOb.js";import"./index.BUV2z7Xs.js";/**
  * @license lucide-react v0.563.0 - ISC
  *
  * This source code is licensed under the ISC license.
