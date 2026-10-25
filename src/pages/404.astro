@@ -1,15 +1,18 @@
 ---
 import '../styles/global.css';
 import { ROUTES, SEO_CONFIG } from '../config';
+import GoogleAnalytics from '../components/GoogleAnalytics.astro';
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <GoogleAnalytics />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#2563eb" />
-    <title>{SEO_CONFIG.DEFAULT_TITLE}</title>
+    <title>Page Not Found | {SEO_CONFIG.DEFAULT_TITLE}</title>
+    <meta name="robots" content="noindex" />
     <script is:inline>
       // Unknown blog posts used to redirect to the blog index; keep that behaviour.
       if (/^\/blog\/.+/.test(window.location.pathname)) {

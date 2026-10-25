@@ -7,7 +7,7 @@ export const generateMetadata = ({
   url = '',
   image = '',
   type = 'website',
-  locale = 'en',
+  locale = SEO_CONFIG.LOCALE,
 }) => {
   const baseUrl = typeof window !== 'undefined' ? window.location.origin : '';
   const fullUrl =
@@ -15,7 +15,12 @@ export const generateMetadata = ({
   const siteName = SEO_CONFIG.DEFAULT_TITLE;
 
   return {
-    title: title ? `${title} | ${siteName}` : siteName,
+    // Titles that already name the brand are used as-is
+    title: !title
+      ? siteName
+      : title.includes(siteName)
+        ? title
+        : `${title} | ${siteName}`,
     description,
     keywords: keywords.join(', '),
     canonical: fullUrl,
@@ -43,7 +48,8 @@ export const generateStructuredData = (type, data) => {
     '@type': type,
   };
 
-  return JSON.stringify({ ...baseData, ...data });
+  // Escape '<' so the JSON can't close the surrounding <script> tag
+  return JSON.stringify({ ...baseData, ...data }).replace(/</g, '\u003c');
 };
 
 export const updateMetaTags = (metadata) => {

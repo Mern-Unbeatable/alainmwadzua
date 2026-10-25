@@ -46,16 +46,22 @@ const INITIAL_OPEN_INDEX = 0;
 const PANEL_BASE_CLASS = 'transition-all duration-300 ease-in-out';
 const PANEL_OPEN_CLASS = 'max-h-40 opacity-100 pb-4';
 const PANEL_CLOSED_CLASS = 'max-h-0 opacity-0';
+
+const seo = {
+  title: 'Online Class Help Questions and Answers',
+  description:
+    'Answers to common questions about Online Class Writers, including how the process works, pricing, confidentiality, urgent deadlines and refunds.',
+};
 ---
 
-<BaseLayout>
+<BaseLayout seo={seo}>
   <div class="w-full flex flex-col font-sans">
     {/* FAQ Section */}
     <div class="max-w-4xl mx-auto px-4 py-14 md:py-16 lg:py-20 w-full">
       <div class="text-center mb-10" data-reveal="text" style="--reveal-delay: 40ms">
-        <h2 class="text-2xl md:text-4xl lg:text-5xl font-bold text-[#1a202c] mb-4">
+        <h1 class="text-2xl md:text-4xl lg:text-5xl font-bold text-[#1a202c] mb-4">
           Frequently Asked Questions
-        </h2>
+        </h1>
         <p class="text-[#4a5568] text-base px-4">
           Everything you need to know about our services, pricing, and how we ensure<br class="hidden md:block" /> your academic success.
         </p>

@@ -4,9 +4,15 @@ import CTASection from '../components/CTASection.astro';
 import SubjectHero from '../components/subject/SubjectHero.astro';
 import SubjectHighlights from '../components/subject/SubjectHighlights.astro';
 import SubjectsGrid from '../components/subject/SubjectsGrid.astro';
+
+const seo = {
+  title: 'Online Subject Help for College Courses',
+  description:
+    'Online subject help for college courses including statistics, calculus, accounting, nursing, biology, economics, finance and more, from subject specialists.',
+};
 ---
 
-<BaseLayout>
+<BaseLayout seo={seo}>
   <div class="w-full bg-white font-sans text-slate-800 antialiased">
     {/* SECTION 1: HERO INTRO AREA */}
     <SubjectHero image="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=1000" />

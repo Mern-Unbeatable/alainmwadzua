@@ -1,0 +1,15 @@
+---
+// Google Analytics 4 (gtag.js). is:inline keeps Astro from bundling or scoping
+// these scripts, so gtag() stays global for later event tracking.
+---
+
+<script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-0V90DG48Y2"></script>
+<script is:inline>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag('js', new Date());
+
+  gtag('config', 'G-0V90DG48Y2');
+</script>

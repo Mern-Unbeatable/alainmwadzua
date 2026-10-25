@@ -12,7 +12,8 @@ import {
 } from 'lucide-react';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import blogPosts from '../../data/blogPosts.json';
-import { ROUTES } from '../../config';
+import { APP_CONFIG, ROUTES } from '../../config';
+import { createBreadcrumbStructuredData, generateStructuredData } from '../../utils/seo';
 
 // One static page per post; unknown slugs fall through to 404.astro,
 // which sends /blog/* visitors back to the blog index.
@@ -26,9 +27,35 @@ const { post } = Astro.props;
 const relatedPosts = blogPosts
   .filter((item) => item.slug !== post.slug)
   .slice(0, 3);
+
+const siteUrl = Astro.site.href;
+const postUrl = new URL(`/blog/${post.slug}`, siteUrl).href;
+const description = post.seoDescription || post.excerpt;
+
+// post.date has no year, so datePublished is left out of the schema
+const seo = {
+  title: post.seoTitle || post.title,
+  description,
+  image: post.heroImage,
+  type: 'article',
+  structuredData: [
+    generateStructuredData('BlogPosting', {
+      headline: post.title,
+      description,
+      image: post.heroImage,
+      mainEntityOfPage: postUrl,
+      publisher: { '@type': 'Organization', name: APP_CONFIG.NAME, url: siteUrl },
+    }),
+    createBreadcrumbStructuredData([
+      { name: 'Home', url: siteUrl },
+      { name: 'Blog', url: new URL(ROUTES.BLOG, siteUrl).href },
+      { name: post.title, url: postUrl },
+    ]),
+  ],
+};
 ---
 
-<BaseLayout>
+<BaseLayout seo={seo}>
   <div class="bg-white">
     {/* Main Article Container */}
     <div class="container mx-auto px-4 py-14 md:py-16 lg:py-20 ">

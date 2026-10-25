@@ -4,9 +4,15 @@ import PricingHeaderSection from '../components/pricing/PricingHeaderSection.ast
 import PricingMainSection from '../components/pricing/PricingMainSection.astro';
 import FeatureGrid from '../components/pricing/FeatureGrid.astro';
 import CTASection from '../components/CTASection.astro';
+
+const seo = {
+  title: 'Online Class Help Cost and Custom Quotes',
+  description:
+    'Learn what affects online class help cost, including course length, complexity and deadline, then request a personalized quote for your coursework.',
+};
 ---
 
-<BaseLayout>
+<BaseLayout seo={seo}>
   <div class="min-h-screen bg-[#fafbfc]">
     <PricingHeaderSection />
     <PricingMainSection />

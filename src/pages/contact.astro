@@ -3,9 +3,15 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import ContactHeroSection from '../components/contact/ContactHeroSection.astro';
 import ContactForm from '../components/contact/ContactForm.jsx';
 import GuaranteesSection from '../components/contact/GuaranteesSection.astro';
+
+const seo = {
+  title: 'Contact Online Class Writers | Request a Quote',
+  description:
+    'Contact Online Class Writers to discuss your course, share your requirements and request a personalized quote for online class help.',
+};
 ---
 
-<BaseLayout>
+<BaseLayout seo={seo}>
   <div class="w-full min-h-screen bg-white font-sans">
     <ContactHeroSection />
 

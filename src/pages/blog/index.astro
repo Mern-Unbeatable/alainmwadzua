@@ -3,9 +3,15 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import BlogTopSection from '../../components/blog/BlogTopSection.astro';
 import BlogDivider from '../../components/blog/BlogDivider.astro';
 import BlogPostsGridSection from '../../components/blog/BlogPostsGridSection.astro';
+
+const seo = {
+  title: 'Online Learning Tips and Study Guides',
+  description:
+    'Online learning tips, study guides and homework advice for college students, covering finals preparation, academic writing and online class success.',
+};
 ---
 
-<BaseLayout>
+<BaseLayout seo={seo}>
   <div class="container mx-auto px-4 py-14 md:py-16 lg:py-20 bg-white">
     <BlogTopSection />
     <div data-reveal="text" style="--reveal-delay: 120ms">

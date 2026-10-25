@@ -27,8 +27,11 @@ export const API_CONFIG = {
 
 export const SEO_CONFIG = {
   DEFAULT_TITLE: 'Online Class Writers',
-  DEFAULT_DESCRIPTION: 'A professional React application',
-  DEFAULT_KEYWORDS: ['react', 'webpack', 'tailwind'],
+  DEFAULT_DESCRIPTION:
+    'Online class help for US college students, with support across homework, assignments, exam preparation and academic writing.',
+  DEFAULT_KEYWORDS: [],
+  DEFAULT_IMAGE: '/mainHero.webp',
+  LOCALE: 'en_US',
   SITE_URL: typeof window !== 'undefined' ? window.location.origin : '',
 };
 

@@ -1,1 +1,0 @@
-import{R as o}from"./index.BUV2z7Xs.js";const t="online-help-cta",n=()=>{const e=document.getElementById(t);return e?(e.scrollIntoView({behavior:"smooth"}),!0):!1},r=()=>{const{pathname:e}=window.location;(e==="/"||e===o.HOME)&&n()||(window.location.href=o.CONTACT)};export{r as h,n as s};

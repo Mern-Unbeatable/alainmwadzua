@@ -2,54 +2,61 @@
 import '../styles/global.css';
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
+import GoogleAnalytics from '../components/GoogleAnalytics.astro';
 import { generateMetadata } from '../utils/seo';
 import { SEO_CONFIG } from '../config';
 
 /**
- * Pass `seo` on pages that previously called the useSEO() hook.
- * Pages without it keep the default document title, exactly like the SPA.
+ * `seo` sets per-page metadata: { title, description, image?, type?,
+ * noindex?, structuredData? }. Pages without it fall back to site defaults,
+ * so every page still gets a description and a canonical URL.
  */
-const { seo } = Astro.props;
+const { seo = {} } = Astro.props;
 
 const pathname = Astro.url.pathname.replace(/\/+$/, '') || '/';
+const siteUrl = Astro.site ?? Astro.url;
 
-const metadata = seo
-  ? generateMetadata({
-      ...seo,
-      url: new URL(pathname, Astro.site ?? Astro.url).href,
-    })
-  : null;
+const metadata = generateMetadata({
+  ...seo,
+  description: seo.description || SEO_CONFIG.DEFAULT_DESCRIPTION,
+  image: new URL(seo.image || SEO_CONFIG.DEFAULT_IMAGE, siteUrl).href,
+  url: new URL(pathname, siteUrl).href,
+});
 
-const title = metadata ? metadata.title : SEO_CONFIG.DEFAULT_TITLE;
+const title = metadata.title;
 
-const metaTags = metadata
-  ? [
-      { name: 'description', content: metadata.description },
-      { name: 'keywords', content: metadata.keywords },
-      { property: 'og:title', content: metadata.openGraph.title },
-      { property: 'og:description', content: metadata.openGraph.description },
-      { property: 'og:url', content: metadata.openGraph.url },
-      { property: 'og:site_name', content: metadata.openGraph.siteName },
-      { property: 'og:locale', content: metadata.openGraph.locale },
-      { property: 'og:type', content: metadata.openGraph.type },
-      { property: 'og:image', content: metadata.openGraph.images[0]?.url },
-      { name: 'twitter:card', content: metadata.twitter.card },
-      { name: 'twitter:title', content: metadata.twitter.title },
-      { name: 'twitter:description', content: metadata.twitter.description },
-      { name: 'twitter:image', content: metadata.twitter.images[0] },
-    ].filter((tag) => tag.content)
-  : [];
+const metaTags = [
+  { name: 'description', content: metadata.description },
+  { name: 'keywords', content: metadata.keywords },
+  { name: 'robots', content: seo.noindex ? 'noindex, follow' : '' },
+  { property: 'og:title', content: metadata.openGraph.title || title },
+  { property: 'og:description', content: metadata.openGraph.description },
+  { property: 'og:url', content: metadata.openGraph.url },
+  { property: 'og:site_name', content: metadata.openGraph.siteName },
+  { property: 'og:locale', content: metadata.openGraph.locale },
+  { property: 'og:type', content: metadata.openGraph.type },
+  { property: 'og:image', content: metadata.openGraph.images[0]?.url },
+  { name: 'twitter:card', content: metadata.twitter.card },
+  { name: 'twitter:title', content: metadata.twitter.title || title },
+  { name: 'twitter:description', content: metadata.twitter.description },
+  { name: 'twitter:image', content: metadata.twitter.images[0] },
+].filter((tag) => tag.content);
+
+// Each entry is a JSON-LD string from generateStructuredData()
+const structuredData = [].concat(seo.structuredData ?? []);
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en-US">
   <head>
     <meta charset="UTF-8" />
+    <GoogleAnalytics />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#2563eb" />
     <title>{title}</title>
     {metaTags.map((tag) => <meta {...tag} />)}
-    {metadata && <link rel="canonical" href={metadata.canonical} />}
+    {!seo.noindex && <link rel="canonical" href={metadata.canonical} />}
+    {structuredData.map((json) => <script type="application/ld+json" set:html={json} />)}
 
     <script is:inline>
       (function () {

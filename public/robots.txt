@@ -45,4 +45,3 @@ User-agent: meta-externalagent
 Allow: /
 
 Sitemap: https://onlineclasswriters.com/sitemap.xml
-Sitemap: https://www.onlineclasswriters.com/sitemap.xml

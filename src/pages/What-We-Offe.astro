@@ -3,9 +3,16 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import WhatWeOfferHeader from '../components/whatweoffer/WhatWeOfferHeader.astro';
 import GridCards from '../components/whatweoffer/GridCards.astro';
 import CTASection from '../components/CTASection.astro';
+
+// Primary keyword pending content review (see SEO plan); kept descriptive for now
+const seo = {
+  title: 'Academic Services We Offer',
+  description:
+    'See the academic support Online Class Writers offers college students, including online class help, homework and assignment help, exam preparation and essay help.',
+};
 ---
 
-<BaseLayout>
+<BaseLayout seo={seo}>
   <div class="bg-white">
     <WhatWeOfferHeader />
     <GridCards />

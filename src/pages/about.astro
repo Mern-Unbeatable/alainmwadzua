@@ -6,9 +6,15 @@ import AboutStorySection from '../components/about/AboutStorySection.astro';
 import AboutFeaturesSection from '../components/about/AboutFeaturesSection.astro';
 import StudentPromiseSection from '../components/about/StudentPromiseSection.astro';
 import CTASection from '../components/CTASection.astro';
+
+const seo = {
+  title: 'About Online Class Writers | Academic Support for Students',
+  description:
+    'Learn about Online Class Writers, our subject specialists and our commitment to confidential, reliable academic support for busy college students.',
+};
 ---
 
-<BaseLayout>
+<BaseLayout seo={seo}>
   <div class="w-full bg-white">
     <AboutHeroSection />
     <div data-reveal="text" style="--reveal-delay: 40ms">

@@ -9,11 +9,27 @@ import OnlineHelpCtaSection from '../components/home/OnlineHelpCtaSection.jsx';
 import ServicesSection from '../components/home/ServicesSection.astro';
 import ExpertTutorsSection from '../components/home/ExpertTutorsSection.astro';
 import DisclaimerSection from '../components/home/DisclaimerSection.astro';
+import { generateStructuredData } from '../utils/seo';
+import { APP_CONFIG } from '../config';
+
+const siteUrl = Astro.site.href;
 
 const seo = {
-  title: '',
-  description: 'Welcome to our React application',
-  keywords: ['react', 'webpack', 'tailwind', 'router'],
+  title: 'Online Class Help for US Students | Online Class Writers',
+  description:
+    'Explore online class support for US college students. Review available subjects, understand pricing, and contact Online Class Writers to discuss your needs.',
+  structuredData: [
+    generateStructuredData('Organization', {
+      name: APP_CONFIG.NAME,
+      url: siteUrl,
+      areaServed: 'US',
+    }),
+    generateStructuredData('WebSite', {
+      name: APP_CONFIG.NAME,
+      url: siteUrl,
+      inLanguage: 'en-US',
+    }),
+  ],
 };
 ---
 
