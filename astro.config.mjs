@@ -8,7 +8,7 @@ const env = loadEnv(process.env.NODE_ENV || 'production', process.cwd(), '');
 const API_BASE_URL = process.env.API_BASE_URL || env.API_BASE_URL || '';
 
 export default defineConfig({
-  site: 'https://onlineclasswriters.com',
+  site: 'https://www.onlineclasswriters.com',
   output: 'static',
   integrations: [react()],
   server: {
