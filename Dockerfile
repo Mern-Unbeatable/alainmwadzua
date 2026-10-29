@@ -1,11 +1,11 @@
 # Coolify: Build Pack = Dockerfile, Ports Exposes = 80
-# API_BASE_URL is baked into the bundle at build time, so add it in Coolify
+# API_BASE_URL is baked into the bundle at build time; override it in Coolify
 # as an environment variable with "Build Variable" checked.
 
 FROM node:22-alpine AS build
 WORKDIR /app
 
-ARG API_BASE_URL=""
+ARG API_BASE_URL="https://api.onlineclasswriters.com"
 ENV API_BASE_URL=$API_BASE_URL
 
 COPY package.json package-lock.json ./
